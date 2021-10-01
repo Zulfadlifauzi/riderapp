@@ -56,8 +56,9 @@ class _MapScreenState extends State<MapScreen> {
                           (int index) => GestureDetector(
                             onTap: () {},
                             child: Container(
-                              decoration:
-                                  const BoxDecoration(color: Colors.white),
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(10)),
                               margin: const EdgeInsets.only(right: 25),
                               width: 350.6,
                               height: 218.4,
@@ -93,7 +94,7 @@ class _MapScreenState extends State<MapScreen> {
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.only(
-                                        left: 20, top: 32),
+                                        left: 20, top: 35),
                                     child: Column(
                                       children: <Widget>[
                                         Text(
@@ -104,7 +105,7 @@ class _MapScreenState extends State<MapScreen> {
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.only(
-                                        left: 181, top: 32),
+                                        left: 181, top: 35),
                                     child: Column(
                                       children: <Widget>[
                                         Text(
@@ -137,7 +138,7 @@ class _MapScreenState extends State<MapScreen> {
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.only(
-                                        left: 20, top: 89),
+                                        left: 20, top: 90),
                                     child: Column(
                                       children: <Widget>[
                                         Text(
@@ -148,7 +149,7 @@ class _MapScreenState extends State<MapScreen> {
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.only(
-                                        left: 182, top: 89),
+                                        left: 182, top: 90),
                                     child: Column(
                                       children: <Widget>[
                                         Text(

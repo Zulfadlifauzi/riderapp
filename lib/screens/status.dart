@@ -1,5 +1,8 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:riderapp/constant/constant.dart';
 
 class StatusScreen extends StatefulWidget {
   const StatusScreen({Key? key}) : super(key: key);
@@ -25,11 +28,47 @@ class _StatusScreenState extends State<StatusScreen> {
           padding: const EdgeInsets.only(left: 20, top: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const <Widget>[
-              SizedBox(height: 1.0),
+            children: <Widget>[
+              const SizedBox(height: 1.0),
               Text(
                 'Youre offline',
                 style: TextStyle(fontSize: 20),
+              ),
+              Divider(),
+              SizedBox(height: 5),
+              Text(
+                'Location',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+              ),
+              Text('Shah Alam seksyen 13'),
+              SizedBox(height: 10),
+              Text(
+                'Total active order',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+              ),
+              Text('102 Orders'),
+              SizedBox(height: 10),
+              Text(
+                'Order nearest you',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+              ),
+              Text('32 Orders'),
+              Divider(),
+              Padding(
+                padding: const EdgeInsets.only(top: 20),
+                child: Container(
+                  width: 370,
+                  decoration: BoxDecoration(
+                      color: Colors.orange,
+                      borderRadius: BorderRadius.circular(8)),
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Start',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
               )
             ],
           ),
