@@ -116,7 +116,6 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
                             child: Icon(Ionicons.location_outline),
                           ),
                           Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: const [
                               Padding(
                                 padding: EdgeInsets.only(right: 40),
@@ -130,14 +129,14 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
                                 child: Text('Pizza Hut \naeon shah alam'),
                               ),
                               Padding(
-                                padding: EdgeInsets.only(right: 15),
+                                padding: EdgeInsets.only(right: 15, top: 20),
                                 child: Text(
                                   'Dropped off',
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsets.only(left: 2),
+                                padding: EdgeInsets.only(left: 1),
                                 child: Text('Menara U'),
                               )
                             ],

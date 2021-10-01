@@ -54,7 +54,62 @@ class _WalletScreenState extends State<WalletScreen> {
                 ),
               ),
             ),
-          )
+          ),
+          Divider(thickness: 1),
+          Row(
+            // ignore: prefer_const_literals_to_create_immutables
+            children: [
+              const Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: Icon(Ionicons.cash_outline),
+              ),
+              const Padding(
+                padding: const EdgeInsets.only(left: 10.0),
+                child: Text(
+                  '"Lorem ipsum dolor sit amet, \nconsectetur adipiscing elit, \nsed do eiusmod tempor incididunt \nut labore et dolore magna aliqua."',
+                  maxLines: 4,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              )
+            ],
+          ),
+          const Divider(thickness: 1),
+          Row(
+            // ignore: prefer_const_literals_to_create_immutables
+            children: [
+              const Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: Icon(Ionicons.cash_outline),
+              ),
+              const Padding(
+                padding: const EdgeInsets.only(left: 10.0),
+                child: Text(
+                  '"Lorem ipsum dolor sit amet, \nconsectetur adipiscing elit, \nsed do eiusmod tempor incididunt \nut labore et dolore magna aliqua."',
+                  maxLines: 4,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              )
+            ],
+          ),
+          const Divider(thickness: 1),
+          Row(
+            // ignore: prefer_const_literals_to_create_immutables
+            children: [
+              const Padding(
+                padding: EdgeInsets.only(left: 10),
+                child: Icon(Ionicons.cash_outline),
+              ),
+              const Padding(
+                padding: EdgeInsets.only(left: 10.0),
+                child: Text(
+                  '"Lorem ipsum dolor sit amet, \nconsectetur adipiscing elit, \nsed do eiusmod tempor incididunt \nut labore et dolore magna aliqua."',
+                  maxLines: 4,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              )
+            ],
+          ),
+          const Divider(thickness: 1),
         ],
       ),
     );

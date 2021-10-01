@@ -30,7 +30,7 @@ class _StatusScreenState extends State<StatusScreen> {
             children: <Widget>[
               const SizedBox(height: 1.0),
               Text(
-                'Youre offline',
+                'Youre online',
                 style: TextStyle(fontSize: 20),
               ),
               Divider(),
