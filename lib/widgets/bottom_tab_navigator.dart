@@ -3,7 +3,8 @@ import 'package:ionicons/ionicons.dart';
 import 'package:riderapp/constant/constant.dart';
 import 'package:riderapp/screens/delivery.dart';
 import 'package:riderapp/screens/history.dart';
-import 'package:riderapp/screens/home.dart';
+import 'package:riderapp/screens/map.dart';
+import 'package:riderapp/screens/status.dart';
 import 'package:riderapp/screens/wallet.dart';
 
 class BottomTabNavigator extends StatefulWidget {
@@ -16,8 +17,9 @@ class BottomTabNavigator extends StatefulWidget {
 class _BottomTabNavigatorState extends State<BottomTabNavigator> {
   int pageIndex = 0;
   List<Widget> pageList = <Widget>[
-    const HomeScreen(),
+    const StatusScreen(),
     const DeliveryScreen(),
+    const MapScreen(),
     const HistoryScreen(),
     const WalletScreen(),
   ];
@@ -38,9 +40,10 @@ class _BottomTabNavigatorState extends State<BottomTabNavigator> {
         type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(
-              icon: Icon(Icons.home_outlined), label: 'Home'),
+              icon: Icon(Ionicons.checkmark_done), label: 'Status'),
           BottomNavigationBarItem(
               icon: Icon(Icons.list_outlined), label: 'Deliveries'),
+          BottomNavigationBarItem(icon: Icon(Icons.map_outlined), label: 'Map'),
           BottomNavigationBarItem(icon: Icon(Icons.history), label: 'History'),
           BottomNavigationBarItem(icon: Icon(Ionicons.wallet), label: 'Wallet'),
         ],
