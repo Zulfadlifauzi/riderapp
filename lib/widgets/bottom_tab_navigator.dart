@@ -17,9 +17,9 @@ class _BottomTabNavigatorState extends State<BottomTabNavigator> {
   int pageIndex = 0;
   List<Widget> pageList = <Widget>[
     const HomeScreen(),
-    const WalletScreen(),
-    const HistoryScreen(),
     const DeliveryScreen(),
+    const HistoryScreen(),
+    const WalletScreen(),
   ];
   @override
   Widget build(BuildContext context) {
