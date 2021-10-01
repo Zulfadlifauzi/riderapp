@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ionicons/ionicons.dart';
 
 class DeliveryScreen extends StatefulWidget {
   const DeliveryScreen({Key? key}) : super(key: key);
@@ -15,6 +16,10 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
         length: 2,
         child: Scaffold(
           appBar: AppBar(
+            leading: IconButton(
+              onPressed: () {},
+              icon: const Icon(Ionicons.menu_outline),
+            ),
             centerTitle: true,
             title: const Text('DELIVERY'),
             bottom: const TabBar(
