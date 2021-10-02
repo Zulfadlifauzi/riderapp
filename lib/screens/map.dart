@@ -43,7 +43,7 @@ class _MapScreenState extends State<MapScreen> {
               right: 0,
               child: Column(
                 children: [
-                  Container(
+                  SizedBox(
                     width: 400,
                     height: 170,
                     // decoration: const BoxDecoration(color: Colors.blue),
@@ -161,7 +161,7 @@ class _MapScreenState extends State<MapScreen> {
                                   Positioned(
                                     bottom: 10,
                                     right: 10,
-                                    child: Container(
+                                    child: SizedBox(
                                       height: 40,
                                       width: 80,
                                       // decoration:

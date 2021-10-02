@@ -49,12 +49,15 @@ class _WalletScreenState extends State<WalletScreen> {
             child: Container(
               width: double.infinity,
               height: 45,
-              decoration: const BoxDecoration(color: Colors.grey),
+              decoration: const BoxDecoration(color: Colors.black),
               child: const Padding(
                 padding: EdgeInsets.only(left: 10, top: 12),
                 child: Text(
                   'Recent Transactions',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                  style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white),
                 ),
               ),
             ),
