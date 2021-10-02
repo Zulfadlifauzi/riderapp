@@ -13,8 +13,12 @@ class _WalletScreenState extends State<WalletScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.black,
         centerTitle: true,
-        title: const Text('WALLET'),
+        title: const Text(
+          'WALLET',
+          style: TextStyle(color: Colors.white),
+        ),
         leading: IconButton(
           onPressed: () {},
           icon: const Icon(Ionicons.menu_outline),
@@ -55,16 +59,16 @@ class _WalletScreenState extends State<WalletScreen> {
               ),
             ),
           ),
-          Divider(thickness: 1),
+          const Divider(thickness: 1),
           Row(
             // ignore: prefer_const_literals_to_create_immutables
             children: [
               const Padding(
-                padding: const EdgeInsets.only(left: 10),
+                padding: EdgeInsets.only(left: 10),
                 child: Icon(Ionicons.cash_outline),
               ),
               const Padding(
-                padding: const EdgeInsets.only(left: 10.0),
+                padding: EdgeInsets.only(left: 10.0),
                 child: Text(
                   '"Lorem ipsum dolor sit amet, \nconsectetur adipiscing elit, \nsed do eiusmod tempor incididunt \nut labore et dolore magna aliqua."',
                   maxLines: 4,
@@ -78,11 +82,11 @@ class _WalletScreenState extends State<WalletScreen> {
             // ignore: prefer_const_literals_to_create_immutables
             children: [
               const Padding(
-                padding: const EdgeInsets.only(left: 10),
+                padding: EdgeInsets.only(left: 10),
                 child: Icon(Ionicons.cash_outline),
               ),
               const Padding(
-                padding: const EdgeInsets.only(left: 10.0),
+                padding: EdgeInsets.only(left: 10.0),
                 child: Text(
                   '"Lorem ipsum dolor sit amet, \nconsectetur adipiscing elit, \nsed do eiusmod tempor incididunt \nut labore et dolore magna aliqua."',
                   maxLines: 4,

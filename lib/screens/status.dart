@@ -15,8 +15,12 @@ class _StatusScreenState extends State<StatusScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.black,
         centerTitle: true,
-        title: const Text('WORK'),
+        title: const Text(
+          'WORK',
+          style: TextStyle(color: Colors.white),
+        ),
         leading: IconButton(
           onPressed: () {},
           icon: const Icon(Ionicons.menu_outline),
@@ -37,19 +41,28 @@ class _StatusScreenState extends State<StatusScreen> {
               SizedBox(height: 5),
               Text(
                 'Location',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.grey,
+                    fontWeight: FontWeight.w600),
               ),
               Text('Shah Alam seksyen 13'),
               SizedBox(height: 10),
               Text(
                 'Total active order',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.grey,
+                    fontWeight: FontWeight.w600),
               ),
               Text('102 Orders'),
               SizedBox(height: 10),
               Text(
                 'Order nearest you',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.grey,
+                    fontWeight: FontWeight.w600),
               ),
               Text('32 Orders'),
               Divider(),
@@ -58,8 +71,8 @@ class _StatusScreenState extends State<StatusScreen> {
                 child: Container(
                   width: 370,
                   decoration: BoxDecoration(
-                      color: Colors.orange,
-                      borderRadius: BorderRadius.circular(8)),
+                    color: Colors.black,
+                  ),
                   child: TextButton(
                     onPressed: () {},
                     child: Text(

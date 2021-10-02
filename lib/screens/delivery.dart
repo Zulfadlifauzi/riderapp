@@ -18,12 +18,16 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
         length: 2,
         child: Scaffold(
           appBar: AppBar(
+            backgroundColor: Colors.black,
             leading: IconButton(
               onPressed: () {},
               icon: const Icon(Ionicons.menu_outline),
             ),
             centerTitle: true,
-            title: const Text('DELIVERY'),
+            title: const Text(
+              'DELIVERY',
+              style: TextStyle(color: Colors.white),
+            ),
             bottom: TabBar(
               // ignore: prefer_const_literals_to_create_immutables
               tabs: [
@@ -152,8 +156,8 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
                         child: Container(
                           width: 370,
                           decoration: BoxDecoration(
-                              color: Colors.orange,
-                              borderRadius: BorderRadius.circular(8)),
+                            color: Colors.black,
+                          ),
                           child: TextButton(
                             onPressed: () {},
                             child: Text(

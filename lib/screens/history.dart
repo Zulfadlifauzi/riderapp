@@ -13,8 +13,12 @@ class _HistoryScreenState extends State<HistoryScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.black,
         centerTitle: true,
-        title: const Text('HISTORY'),
+        title: const Text(
+          'HISTORY',
+          style: TextStyle(color: Colors.white),
+        ),
         leading: IconButton(
           onPressed: () {},
           icon: const Icon(Ionicons.menu_outline),

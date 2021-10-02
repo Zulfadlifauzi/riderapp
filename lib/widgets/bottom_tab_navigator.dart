@@ -28,8 +28,8 @@ class _BottomTabNavigatorState extends State<BottomTabNavigator> {
     return Scaffold(
       body: pageList[pageIndex],
       bottomNavigationBar: BottomNavigationBar(
-        selectedIconTheme: const IconThemeData(color: kPrimaryColor),
-        selectedItemColor: const Color(0xFFFF7F50),
+        selectedIconTheme: const IconThemeData(color: Colors.black),
+        selectedItemColor: const Color(0xFF1D1D35),
         unselectedItemColor: kContentColorDarkTheme.withOpacity(0.32),
         currentIndex: pageIndex,
         onTap: (value) {
