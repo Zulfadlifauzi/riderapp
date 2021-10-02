@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:riderapp/widgets/drawer_tab_navigator.dart';
 
 class StatusScreen extends StatefulWidget {
   const StatusScreen({Key? key}) : super(key: key);
@@ -18,14 +19,17 @@ class _StatusScreenState extends State<StatusScreen> {
         backgroundColor: Colors.black,
         centerTitle: true,
         title: const Text(
-          'WORK',
+          'STATUS',
           style: TextStyle(color: Colors.white),
         ),
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            DrawerTab();
+          },
           icon: const Icon(Ionicons.menu_outline),
         ),
       ),
+      drawer: DrawerTab(),
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.only(left: 20, top: 20),
@@ -44,7 +48,7 @@ class _StatusScreenState extends State<StatusScreen> {
                 style: TextStyle(
                     fontSize: 20,
                     color: Colors.grey,
-                    fontWeight: FontWeight.w600),
+                    fontWeight: FontWeight.w300),
               ),
               Text('Shah Alam seksyen 13'),
               SizedBox(height: 10),
@@ -53,7 +57,7 @@ class _StatusScreenState extends State<StatusScreen> {
                 style: TextStyle(
                     fontSize: 20,
                     color: Colors.grey,
-                    fontWeight: FontWeight.w600),
+                    fontWeight: FontWeight.w300),
               ),
               Text('102 Orders'),
               SizedBox(height: 10),
@@ -62,7 +66,7 @@ class _StatusScreenState extends State<StatusScreen> {
                 style: TextStyle(
                     fontSize: 20,
                     color: Colors.grey,
-                    fontWeight: FontWeight.w600),
+                    fontWeight: FontWeight.w300),
               ),
               Text('32 Orders'),
               Divider(),
@@ -76,7 +80,7 @@ class _StatusScreenState extends State<StatusScreen> {
                   child: TextButton(
                     onPressed: () {},
                     child: Text(
-                      'Start',
+                      'Stop',
                       style: TextStyle(color: Colors.white),
                     ),
                   ),

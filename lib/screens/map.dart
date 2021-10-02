@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:ionicons/ionicons.dart';
 import 'package:riderapp/models/order.dart';
 
 class MapScreen extends StatefulWidget {
@@ -54,7 +55,12 @@ class _MapScreenState extends State<MapScreen> {
                         children: List.generate(
                           orderlist.length,
                           (int index) => GestureDetector(
-                            onTap: () {},
+                            onTap: () => showModalBottomSheet(
+                              enableDrag: true,
+                              isDismissible: true,
+                              context: context,
+                              builder: (context) => buildSheet(),
+                            ),
                             child: Container(
                               decoration: BoxDecoration(
                                   color: Colors.white,
@@ -167,7 +173,36 @@ class _MapScreenState extends State<MapScreen> {
                                       // decoration:
                                       //     BoxDecoration(color: Colors.red),
                                       child: TextButton(
-                                        onPressed: () {},
+                                        onPressed: () => showDialog<String>(
+                                          context: context,
+                                          builder: (BuildContext context) =>
+                                              AlertDialog(
+                                            title: const Text('Confirm Order'),
+                                            content: Row(
+                                              children: const <Widget>[
+                                                Icon(Ionicons.bag_outline),
+                                                Padding(
+                                                  padding:
+                                                      EdgeInsets.only(left: 10),
+                                                  child:
+                                                      Text('k8k8-kkkl(#5151)'),
+                                                ),
+                                              ],
+                                            ),
+                                            actions: <Widget>[
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    context, 'Cancel'),
+                                                child: const Text('Cancel'),
+                                              ),
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    context, 'OK'),
+                                                child: const Text('Confirm'),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
                                         child: const Text('Accept'),
                                       ),
                                     ),
@@ -187,3 +222,124 @@ class _MapScreenState extends State<MapScreen> {
     );
   }
 }
+
+Widget buildSheet() => Container(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(left: 20, top: 20),
+            child: Container(
+              child: Row(
+                children: const [
+                  Icon(Ionicons.person_outline),
+                  Padding(
+                    padding: EdgeInsets.only(left: 15),
+                    child: Text(
+                      'Name :',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 10),
+                    child: Text('Amir'),
+                  )
+                ],
+              ),
+            ),
+          ),
+          const Divider(thickness: 1),
+          Padding(
+            padding: const EdgeInsets.only(left: 20, top: 20),
+            child: Row(
+              children: const [
+                Icon(Ionicons.chatbox_outline),
+                Padding(
+                  padding: EdgeInsets.only(left: 15),
+                  child: Text(
+                    'Note : ',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 10),
+                  child: Text('"Bang letak kat meja ya"'),
+                )
+              ],
+            ),
+          ),
+          const Divider(thickness: 1),
+          Padding(
+            padding: const EdgeInsets.only(left: 20, top: 20),
+            child: Container(
+              child: Row(
+                children: const [
+                  Icon(Ionicons.card_outline),
+                  Padding(
+                    padding: EdgeInsets.only(left: 15),
+                    child: Text(
+                      'Payment :',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 10),
+                    child: Text('Online payment'),
+                  )
+                ],
+              ),
+            ),
+          ),
+          Divider(thickness: 1),
+          Padding(
+            padding: const EdgeInsets.only(left: 20, top: 20),
+            child: Container(
+              child: Row(
+                children: const [
+                  Icon(Ionicons.location_outline),
+                  Padding(
+                    padding: EdgeInsets.only(left: 15),
+                    child: Text(
+                      'Distance :',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 10),
+                    child: Text('10 KM'),
+                  )
+                ],
+              ),
+            ),
+          ),
+          Divider(thickness: 1),
+          Row(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(right: 15, left: 20),
+                child: Text(
+                  'Pick up :',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 1),
+                child: Text('Pizza Hut \naeon shah alam'),
+              ),
+              Padding(
+                padding: EdgeInsets.only(right: 10, left: 50),
+                child: Text(
+                  'Dropped off :',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 10.0),
+                child: Text('Menara U'),
+              ),
+            ],
+          ),
+          Divider(thickness: 1)
+        ],
+      ),
+    );

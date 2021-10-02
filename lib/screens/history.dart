@@ -20,25 +20,15 @@ class _HistoryScreenState extends State<HistoryScreen> {
           'HISTORY',
           style: TextStyle(color: Colors.white),
         ),
-        // leading: IconButton(
-        //   onPressed: () {},
-        //   icon: const Icon(Ionicons.menu_outline),
-        // ),
+        leading: IconButton(
+          onPressed: () {},
+          icon: const Icon(Ionicons.menu_outline),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.only(left: 10, top: 10),
         child: Stack(
           children: <Widget>[
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: Colors.black, width: 0.2),
-              ),
-              width: 50,
-              height: 50,
-              child: IconButton(
-                  onPressed: () {}, icon: const Icon(Ionicons.menu_outline)),
-            ),
             Padding(
               padding: const EdgeInsets.only(top: 100, left: 55),
               child: SizedBox(

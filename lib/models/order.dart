@@ -7,21 +7,24 @@ class AllModel {
   String? dropoff;
   String? mile;
   String? image;
+  String? order;
 
   AllModel(this.name, this.description, this.price, this.location, this.pickup,
-      this.dropoff, this.mile, this.image);
+      this.dropoff, this.mile, this.image, this.order);
 }
 
 List<AllModel> orderlist = allData
     .map((item) => AllModel(
-        item['name'],
-        item['description'],
-        item['price'],
-        item['location'],
-        item['pickup'],
-        item['dropoff'],
-        item['mile'],
-        item['image']))
+          item['name'],
+          item['description'],
+          item['price'],
+          item['location'],
+          item['pickup'],
+          item['dropoff'],
+          item['mile'],
+          item['image'],
+          item['order'],
+        ))
     .toList();
 
 var allData = [
@@ -33,7 +36,7 @@ var allData = [
     'pickup': 'Pizza hut aeon \nshah alam',
     'dropoff': 'menara U1',
     'mile': '5KM',
-    'image': 'https://static.toiimg.com/photo/54445819.cms'
+    'order': 'h544-8gi3'
   },
   {
     'name': 'Amir',
@@ -43,7 +46,7 @@ var allData = [
     'pickup': 'rojak mee \nshah alam',
     'dropoff': 'menara U1',
     'mile': '11KM',
-    'image': 'https://live.staticflickr.com/6010/5983602334_3f1e716fbc_b.jpg'
+    'order': 'h544-8gi3'
   },
   {
     'name': 'Amri',
@@ -53,7 +56,7 @@ var allData = [
     'pickup': 'Pizza hut \naeon shah alam',
     'dropoff': 'menara U1',
     'mile': '5KM',
-    'image': 'https://static.toiimg.com/photo/54445819.cms'
+    'order': 'h544-8gi3'
   },
   {
     'name': 'Khalid',
