@@ -52,10 +52,10 @@ class _HomeScreenState extends State<SignupScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text(
-          'Locating user location',
-          style: GoogleFonts.varela(color: Colors.black),
-        ),
+        // title: Text(
+        //   'Locating user location',
+        //   style: GoogleFonts.varela(color: Colors.black),
+        // ),
         elevation: 0,
         backgroundColor: Colors.white,
       ),
