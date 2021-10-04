@@ -5,6 +5,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'package:cron/cron.dart';
+import 'package:ionicons/ionicons.dart';
 import 'package:riderapp/models/rider_register.dart';
 
 class SignupScreen extends StatefulWidget {
@@ -34,15 +35,8 @@ class _HomeScreenState extends State<SignupScreen> {
   final latController = TextEditingController();
   final longController = TextEditingController();
 
-  late CreateUserRequest _user;
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   Position? _currentPosition;
-
-  @override
-  void initState() {
-    super.initState();
-    _user = CreateUserRequest();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,12 +46,20 @@ class _HomeScreenState extends State<SignupScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context, true);
+          },
+          icon: const Icon(
+            Ionicons.arrow_back_outline,
+          ),
+        ),
         // title: Text(
         //   'Locating user location',
         //   style: GoogleFonts.varela(color: Colors.black),
         // ),
         elevation: 0,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.black,
       ),
       body: SingleChildScrollView(
         child: Stack(
@@ -66,7 +68,7 @@ class _HomeScreenState extends State<SignupScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 85),
+                  padding: const EdgeInsets.only(left: 85, top: 20),
                   child: Text(
                       'Enable your location ! \nFor new live delivery experience',
                       textAlign: TextAlign.center,
@@ -82,7 +84,7 @@ class _HomeScreenState extends State<SignupScreen> {
                 Padding(
                   padding: const EdgeInsets.only(left: 40, right: 40),
                   child: Container(
-                    margin: const EdgeInsets.only(top: 50),
+                    margin: const EdgeInsets.only(top: 80),
                     child: Form(
                       key: formKey,
                       child: Column(
@@ -115,7 +117,7 @@ class _HomeScreenState extends State<SignupScreen> {
               child: Padding(
                 padding: const EdgeInsets.only(left: 40, right: 40),
                 child: Container(
-                  margin: const EdgeInsets.only(top: 290),
+                  margin: const EdgeInsets.only(top: 320),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: <Widget>[
@@ -141,7 +143,7 @@ class _HomeScreenState extends State<SignupScreen> {
                   children: [
                     Container(
                       width: double.infinity,
-                      margin: const EdgeInsets.only(top: 250),
+                      margin: const EdgeInsets.only(top: 280),
                       decoration: BoxDecoration(
                           color: Colors.black,
                           borderRadius: BorderRadius.circular(5.0)),
@@ -155,9 +157,7 @@ class _HomeScreenState extends State<SignupScreen> {
                               final String longitude = longController.text;
                               final CreateUserRequest user =
                                   await createUser(name, latitude, longitude);
-                              setState(() {
-                                _user = user;
-                              });
+                              setState(() {});
                               print(DateTime.now());
                             });
                           await Future.delayed(const Duration(days: 1));

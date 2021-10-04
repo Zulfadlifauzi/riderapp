@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 import 'package:riderapp/screens/signup.dart';
+import 'package:riderapp/widgets/bottom_tab_navigator.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -89,12 +90,18 @@ class _SignupScreenState extends State<LoginScreen> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => SignupScreen()));
+                                  builder: (context) => const SignupScreen()));
                         },
                         child: const Text('Sign up',
                             style: TextStyle(color: Colors.black))),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const BottomTabNavigator()));
+                      },
                       child: Container(
                         height: 60,
                         width: 60,
