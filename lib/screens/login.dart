@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
+import 'package:riderapp/screens/signup.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -41,14 +42,14 @@ class _SignupScreenState extends State<LoginScreen> {
                   style: TextStyle(
                       fontSize: 25,
                       fontWeight: FontWeight.bold,
-                      color: Color(0xFF363f93)),
+                      color: Colors.black),
                 ),
                 const Text(
                   'Welcome !',
                   style: TextStyle(
                       fontSize: 25,
                       fontWeight: FontWeight.bold,
-                      color: Color(0xFF363f93)),
+                      color: Colors.black),
                 ),
                 SizedBox(
                   height: height * 0.03,
@@ -84,9 +85,14 @@ class _SignupScreenState extends State<LoginScreen> {
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
                                 color: Color(0xFF363f93))),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SignupScreen()));
+                        },
                         child: const Text('Sign up',
-                            style: TextStyle(color: Color(0xFF363f93)))),
+                            style: TextStyle(color: Colors.black))),
                     TextButton(
                       onPressed: () {},
                       child: Container(
@@ -94,7 +100,7 @@ class _SignupScreenState extends State<LoginScreen> {
                         width: 60,
                         decoration: const BoxDecoration(
                           shape: BoxShape.circle,
-                          color: Color(0xFF363f93),
+                          color: Colors.black,
                         ),
                         child: const Icon(
                           Icons.arrow_forward,
@@ -116,7 +122,7 @@ class _SignupScreenState extends State<LoginScreen> {
                                 color: Color(0xFF363f93))),
                         onPressed: () {},
                         child: const Text('Sign in',
-                            style: TextStyle(color: Color(0xFF363f93)))),
+                            style: TextStyle(color: Colors.black))),
                     Text(
                       'Forgot password',
                       style: TextStyle(color: Colors.grey[500]),

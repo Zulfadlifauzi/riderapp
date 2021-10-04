@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:riderapp/screens/login.dart';
-import 'package:riderapp/screens/signup.dart';
 
 void main() {
   runApp(const MyApp());
