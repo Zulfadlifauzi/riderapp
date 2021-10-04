@@ -42,7 +42,7 @@ class _DrawerTabState extends State<DrawerTab> {
             buildMenuItem(
                 text: 'Notifications', icon: Ionicons.notifications_outline),
             const SizedBox(
-              height: 380,
+              height: 295,
             ),
             buildMenuItem(text: 'Sign out', icon: Ionicons.log_out_outline)
           ],

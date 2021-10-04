@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:lottie/lottie.dart';
+import 'package:riderapp/widgets/drawer_tab_navigator.dart';
 
 class DeliveryScreen extends StatefulWidget {
   const DeliveryScreen({Key? key}) : super(key: key);
@@ -21,7 +22,9 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
           appBar: AppBar(
             backgroundColor: Colors.black,
             leading: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                DrawerTab();
+              },
               icon: const Icon(Ionicons.menu_outline),
             ),
             centerTitle: true,

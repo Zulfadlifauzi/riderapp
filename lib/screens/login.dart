@@ -38,19 +38,25 @@ class _SignupScreenState extends State<LoginScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(height: height * 0.04),
-                const Text(
-                  'Here to Get',
-                  style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black),
+                const Padding(
+                  padding: EdgeInsets.only(left: 100),
+                  child: Text(
+                    'Hello Again!',
+                    style: TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black),
+                  ),
                 ),
-                const Text(
-                  'Welcome !',
-                  style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black),
+                const Padding(
+                  padding: EdgeInsets.only(left: 60, top: 10),
+                  child: Text(
+                    'How are you today ?',
+                    style: TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black),
+                  ),
                 ),
                 SizedBox(
                   height: height * 0.03,
@@ -77,7 +83,7 @@ class _SignupScreenState extends State<LoginScreen> {
                   obscureText: hidePassword,
                 ),
                 SizedBox(height: height * 0.05),
-                Row(
+                Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     TextButton(
@@ -92,8 +98,19 @@ class _SignupScreenState extends State<LoginScreen> {
                               MaterialPageRoute(
                                   builder: (context) => const SignupScreen()));
                         },
-                        child: const Text('Sign up',
-                            style: TextStyle(color: Colors.black))),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: const <Widget>[
+                            Text(
+                              'Dont have an account ? ',
+                              style:
+                                  TextStyle(color: Colors.grey, fontSize: 13),
+                            ),
+                            Text('Register',
+                                style: TextStyle(
+                                    color: Colors.black, fontSize: 15)),
+                          ],
+                        )),
                     TextButton(
                       onPressed: () {
                         Navigator.push(
@@ -104,36 +121,43 @@ class _SignupScreenState extends State<LoginScreen> {
                       },
                       child: Container(
                         height: 60,
-                        width: 60,
-                        decoration: const BoxDecoration(
-                          shape: BoxShape.circle,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
                           color: Colors.black,
                         ),
-                        child: const Icon(
-                          Icons.arrow_forward,
-                          color: Colors.white,
+                        child: TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const BottomTabNavigator()));
+                          },
+                          child: const Text(
+                            'Sign In',
+                            style: TextStyle(color: Colors.white),
+                          ),
                         ),
                       ),
                     )
                   ],
                 ),
-                SizedBox(height: height * 0.12),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
                     TextButton(
-                        style: TextButton.styleFrom(
-                            textStyle: const TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                                color: Color(0xFF363f93))),
-                        onPressed: () {},
-                        child: const Text('Sign in',
-                            style: TextStyle(color: Colors.black))),
-                    Text(
-                      'Forgot password',
-                      style: TextStyle(color: Colors.grey[500]),
-                    )
+                      style: TextButton.styleFrom(
+                          textStyle: const TextStyle(
+                              fontSize: 13,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xFF363f93))),
+                      onPressed: () {},
+                      child: const Text(
+                        'Forgot password ',
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                    ),
                   ],
                 ),
               ],

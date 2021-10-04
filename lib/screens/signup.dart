@@ -95,6 +95,16 @@ class _HomeScreenState extends State<SignupScreen> {
                                 labelText: 'Enter your name'),
                           ),
                           TextFormField(
+                            controller: nameController,
+                            decoration: const InputDecoration(
+                                labelText: 'Enter your email'),
+                          ),
+                          TextFormField(
+                            controller: nameController,
+                            decoration: const InputDecoration(
+                                labelText: 'Enter your password'),
+                          ),
+                          TextFormField(
                             enabled: false,
                             controller: longController,
                             decoration: const InputDecoration(
@@ -117,7 +127,7 @@ class _HomeScreenState extends State<SignupScreen> {
               child: Padding(
                 padding: const EdgeInsets.only(left: 40, right: 40),
                 child: Container(
-                  margin: const EdgeInsets.only(top: 320),
+                  margin: const EdgeInsets.only(top: 430),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: <Widget>[
@@ -143,7 +153,7 @@ class _HomeScreenState extends State<SignupScreen> {
                   children: [
                     Container(
                       width: double.infinity,
-                      margin: const EdgeInsets.only(top: 280),
+                      margin: const EdgeInsets.only(top: 400),
                       decoration: BoxDecoration(
                           color: Colors.black,
                           borderRadius: BorderRadius.circular(5.0)),
