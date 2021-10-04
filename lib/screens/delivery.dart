@@ -181,14 +181,12 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
               ),
               Column(
                 children: <Widget>[
-                  Container(
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 10, right: 10),
-                      child: SizedBox(
-                        width: 300,
-                        height: 300,
-                        child: Lottie.asset('assets/lottie/astronaut.json'),
-                      ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10, right: 10),
+                    child: SizedBox(
+                      width: 300,
+                      height: 300,
+                      child: Lottie.asset('assets/lottie/astronaut.json'),
                     ),
                   ),
                   Text(

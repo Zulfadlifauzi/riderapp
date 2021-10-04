@@ -332,6 +332,6 @@ Widget buildSheet() => Column(
             ),
           ],
         ),
-        Divider(thickness: 1)
+        const Divider(thickness: 1)
       ],
     );

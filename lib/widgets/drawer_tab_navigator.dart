@@ -35,13 +35,13 @@ class _DrawerTabState extends State<DrawerTab> {
               height: 16,
             ),
             buildMenuItem(text: 'Updates', icon: Icons.update),
-            SizedBox(
+            const SizedBox(
               height: 16,
             ),
-            Divider(color: Colors.white, thickness: 1),
+            const Divider(color: Colors.white, thickness: 1),
             buildMenuItem(
                 text: 'Notifications', icon: Ionicons.notifications_outline),
-            SizedBox(
+            const SizedBox(
               height: 380,
             ),
             buildMenuItem(text: 'Sign out', icon: Ionicons.log_out_outline)
@@ -56,12 +56,12 @@ Widget buildMenuItem({
   required String text,
   required IconData icon,
 }) {
-  final color = Colors.white;
+  const color = Colors.white;
   final hoverColor = Colors.white70;
 
   return ListTile(
     leading: Icon(icon, color: color),
-    title: Text(text, style: TextStyle(color: color)),
+    title: Text(text, style: const TextStyle(color: color)),
     hoverColor: hoverColor,
     onTap: () {},
   );

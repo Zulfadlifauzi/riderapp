@@ -40,6 +40,9 @@ dependencies:
   lottie: ^1.2.1
   modal_bottom_sheet: ^2.0.0
   form_field_validator: ^1.1.0
+  geolocator: ^7.6.2
+  google_fonts: ^2.1.0
+  cron: ^0.3.2
 
 dev_dependencies:
   flutter_test:

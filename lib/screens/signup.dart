@@ -1,138 +1,196 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
-import 'package:riderapp/screens/status.dart';
-import 'package:form_field_validator/form_field_validator.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:http/http.dart' as http;
+import 'package:cron/cron.dart';
+import 'package:riderapp/models/rider_register.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({Key? key}) : super(key: key);
 
   @override
-  _SignupScreenState createState() => _SignupScreenState();
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _SignupScreenState extends State<SignupScreen> {
-  bool hidePassword = true;
-  TextEditingController passController = TextEditingController();
-  TextEditingController emailController = TextEditingController();
-  TextEditingController nameController = TextEditingController();
+Future<CreateUserRequest> createUser(
+    String name, String latitude, String longitude) async {
+  const String apiUrl = 'http://api.staging.tarsoft.co/api/coordinates/create';
 
+  final response = await http.post(Uri.parse(apiUrl),
+      body: {'name': name, 'latitude': latitude, 'longitude': longitude});
+  if (response.statusCode == 200 || response.statusCode == 500) {
+    print(response.statusCode);
+    print(response.body);
+    return CreateUserRequest.fromJson(json.decode(response.body));
+  } else {
+    throw Exception('Failed to load data');
+  }
+}
+
+class _HomeScreenState extends State<SignupScreen> {
+  final nameController = TextEditingController();
+  final latController = TextEditingController();
+  final longController = TextEditingController();
+
+  late CreateUserRequest _user;
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  final scaffoldKey = GlobalKey<FormState>();
+  Position? _currentPosition;
+
+  @override
+  void initState() {
+    super.initState();
+    _user = CreateUserRequest();
+  }
 
   @override
   Widget build(BuildContext context) {
-    final double height = MediaQuery.of(context).size.height;
+    longController.text = _currentPosition?.longitude.toString() ?? '';
+    latController.text = _currentPosition?.latitude.toString() ?? '';
 
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-          key: scaffoldKey,
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back, color: Colors.black),
-            onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const StatusScreen()));
-            },
-          )),
-      backgroundColor: const Color(0xFFffffff),
+        title: Text(
+          'Locating user location',
+          style: GoogleFonts.varela(color: Colors.black),
+        ),
+        elevation: 0,
+        backgroundColor: Colors.white,
+      ),
       body: SingleChildScrollView(
-        child: Form(
-          key: formKey,
-          child: Container(
-            padding: const EdgeInsets.only(left: 40, right: 40),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+        child: Stack(
+          children: <Widget>[
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(height: height * 0.04),
-                const Text(
-                  'Prizes and Suprises',
-                  style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xFF363f93)),
-                ),
-                const Text(
-                  'Await you !',
-                  style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xFF363f93)),
-                ),
-                SizedBox(
-                  height: height * 0.03,
-                ),
-                TextFormField(
-                    controller: nameController,
-                    decoration:
-                        const InputDecoration(labelText: 'Enter your name'),
-                    validator: MultiValidator([
-                      RequiredValidator(errorText: 'Enter your name'),
-                      MinLengthValidator(5,
-                          errorText: 'Should be at least 5 characters')
-                    ])),
-                SizedBox(height: height * 0.05),
-                TextFormField(
-                    controller: emailController,
-                    decoration:
-                        const InputDecoration(labelText: 'Enter your email'),
-                    validator: MultiValidator([
-                      RequiredValidator(errorText: 'Enter your email'),
-                      EmailValidator(errorText: 'Not A Valid Email')
-                    ])),
-                SizedBox(height: height * 0.05),
-                TextFormField(
-                  controller: passController,
-                  decoration:
-                      const InputDecoration(labelText: 'Enter your password'),
-                  validator: MultiValidator([
-                    RequiredValidator(errorText: 'Enter your password'),
-                    MinLengthValidator(6,
-                        errorText: 'Should be at least 6 characters')
-                  ]),
-                  obscureText: hidePassword,
-                ),
-                SizedBox(height: height * 0.05),
-                Column(
-                  children: <Widget>[
-                    TextButton(
-                        onPressed: () {},
-                        child: Container(
-                          child: const Padding(
-                            padding: EdgeInsets.only(top: 10),
-                            child: Text(
-                              'Register',
-                              style: TextStyle(color: Colors.white),
-                              textAlign: TextAlign.center,
-                            ),
-                          ),
-                          height: 40,
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5.0),
-                            color: const Color(0xFF363f93),
-                          ),
-                        )),
-                    SizedBox(
-                      height: height * 0.09,
-                    ),
-                  ],
+                Padding(
+                  padding: const EdgeInsets.only(left: 85),
+                  child: Text(
+                      'Enable your location ! \nFor new live delivery experience',
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.staatliches(
+                        fontSize: 20,
+                      )),
                 ),
               ],
             ),
-          ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 40, right: 40),
+                  child: Container(
+                    margin: const EdgeInsets.only(top: 50),
+                    child: Form(
+                      key: formKey,
+                      child: Column(
+                        children: [
+                          TextFormField(
+                            controller: nameController,
+                            decoration: const InputDecoration(
+                                labelText: 'Enter your name'),
+                          ),
+                          TextFormField(
+                            enabled: false,
+                            controller: longController,
+                            decoration: const InputDecoration(
+                                labelText: 'Your longitude'),
+                          ),
+                          TextFormField(
+                            enabled: false,
+                            controller: latController,
+                            decoration: const InputDecoration(
+                                labelText: 'Your latitude'),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            ),
+            Center(
+              child: Padding(
+                padding: const EdgeInsets.only(left: 40, right: 40),
+                child: Container(
+                  margin: const EdgeInsets.only(top: 290),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: <Widget>[
+                      // if (_currentPosition != null)
+                      //   Text(
+                      //       'Longitude: ${_currentPosition!.longitude} \nLatitude: ${_currentPosition!.latitude}'),
+                      const SizedBox(height: 15),
+                      TextButton(
+                        child: const Text('Get Location'),
+                        onPressed: () {
+                          _getCurrentLocation();
+                        },
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            Center(
+              child: Padding(
+                padding: const EdgeInsets.only(left: 40, right: 40),
+                child: Column(
+                  children: [
+                    Container(
+                      width: double.infinity,
+                      margin: const EdgeInsets.only(top: 250),
+                      decoration: BoxDecoration(
+                          color: Colors.black,
+                          borderRadius: BorderRadius.circular(5.0)),
+                      child: TextButton(
+                        onPressed: () async {
+                          final cron = Cron()
+                            ..schedule(Schedule.parse('*/10 * * * * *'),
+                                () async {
+                              final String name = nameController.text;
+                              final String latitude = latController.text;
+                              final String longitude = longController.text;
+                              final CreateUserRequest user =
+                                  await createUser(name, latitude, longitude);
+                              setState(() {
+                                _user = user;
+                              });
+                              print(DateTime.now());
+                            });
+                          await Future.delayed(const Duration(days: 1));
+                          await cron.close();
+                        },
+                        child: const Text(
+                          'Register up',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            )
+          ],
         ),
       ),
     );
   }
 
-  bool validateAndSave() {
-    final form = formKey.currentState;
-    if (form!.validate()) {
-      form.save();
-      return true;
-    }
-    return false;
+  _getCurrentLocation() {
+    Geolocator.getCurrentPosition(
+            desiredAccuracy: LocationAccuracy.best,
+            forceAndroidLocationManager: true)
+        .then((Position position) {
+      setState(() {
+        _currentPosition = position;
+      });
+    }).catchError((e) {
+      print(e);
+    });
   }
+
+  void schedule(Schedule schedule, Null Function() param1) {}
 }
