@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:riderapp/widgets/bottom_tab_navigator.dart';
+import 'package:riderapp/screens/signup.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const BottomTabNavigator(),
+      home: SignupScreen(),
     );
   }
 }

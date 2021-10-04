@@ -9,7 +9,7 @@ class DrawerTab extends StatefulWidget {
 }
 
 class _DrawerTabState extends State<DrawerTab> {
-  final padding = EdgeInsets.symmetric(horizontal: 20);
+  final padding = const EdgeInsets.symmetric(horizontal: 20);
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -18,20 +18,20 @@ class _DrawerTabState extends State<DrawerTab> {
         child: ListView(
           padding: padding,
           children: <Widget>[
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
             buildMenuItem(text: 'Settings', icon: Ionicons.settings_outline),
-            SizedBox(
+            const SizedBox(
               height: 16,
             ),
             buildMenuItem(text: 'Profile', icon: Ionicons.person_outline),
-            SizedBox(
+            const SizedBox(
               height: 16,
             ),
             buildMenuItem(
                 text: 'Customer Service', icon: Ionicons.chatbox_outline),
-            SizedBox(
+            const SizedBox(
               height: 16,
             ),
             buildMenuItem(text: 'Updates', icon: Icons.update),
