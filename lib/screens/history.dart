@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:riderapp/widgets/drawer_tab_navigator.dart';
 
 class HistoryScreen extends StatefulWidget {
   const HistoryScreen({Key? key}) : super(key: key);
@@ -23,11 +24,8 @@ class _HistoryScreenState extends State<HistoryScreen> {
           style: GoogleFonts.staatliches(
               color: Colors.white, letterSpacing: 5, fontSize: 20),
         ),
-        leading: IconButton(
-          onPressed: () {},
-          icon: const Icon(Ionicons.menu_outline),
-        ),
       ),
+      drawer: const DrawerTab(),
       body: Padding(
         padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
         child: Container(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:riderapp/widgets/drawer_tab_navigator.dart';
 
 class WalletScreen extends StatefulWidget {
   const WalletScreen({Key? key}) : super(key: key);
@@ -21,11 +22,8 @@ class _WalletScreenState extends State<WalletScreen> {
           style: GoogleFonts.staatliches(
               color: Colors.white, letterSpacing: 5, fontSize: 20),
         ),
-        leading: IconButton(
-          onPressed: () {},
-          icon: const Icon(Ionicons.menu_outline),
-        ),
       ),
+      drawer: const DrawerTab(),
       body: Column(
         children: <Widget>[
           Container(

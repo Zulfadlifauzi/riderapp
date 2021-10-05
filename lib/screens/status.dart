@@ -24,14 +24,8 @@ class _StatusScreenState extends State<StatusScreen> {
           style: GoogleFonts.staatliches(
               color: Colors.white, letterSpacing: 5, fontSize: 20),
         ),
-        leading: IconButton(
-          onPressed: () {
-            DrawerTab();
-          },
-          icon: const Icon(Ionicons.menu_outline),
-        ),
       ),
-      drawer: DrawerTab(),
+      drawer: const DrawerTab(),
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.only(left: 20, top: 20),

@@ -22,12 +22,6 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
         child: Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.black,
-            leading: IconButton(
-              onPressed: () {
-                DrawerTab();
-              },
-              icon: const Icon(Ionicons.menu_outline),
-            ),
             centerTitle: true,
             title: Text(
               'DELIVERY',
@@ -46,6 +40,8 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
               ],
             ),
           ),
+          drawer: const DrawerTab(),
+
           // ignore: avoid_unnecessary_containers
           body: TabBarView(
             children: <Widget>[
