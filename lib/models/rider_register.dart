@@ -19,23 +19,28 @@ class DataResponse {
     this.updatedAt,
     this.createdAt,
     this.id,
+    this.password,
+    this.email,
   });
 
   String? latitude;
   String? longitude;
   String? name;
+  String? email;
+  String? password;
   DateTime? updatedAt;
   DateTime? createdAt;
   int? id;
 
   factory DataResponse.fromJson(Map<String, dynamic> json) => DataResponse(
-        latitude: json["latitude"],
-        longitude: json["longitude"],
-        name: json["name"],
-        updatedAt: DateTime.parse(json["updated_at"]),
-        createdAt: DateTime.parse(json["created_at"]),
-        id: json["id"],
-      );
+      latitude: json["latitude"],
+      longitude: json["longitude"],
+      name: json["name"],
+      updatedAt: DateTime.parse(json["updated_at"]),
+      createdAt: DateTime.parse(json["created_at"]),
+      id: json["id"],
+      email: json['email'],
+      password: json['password']);
 
   Map<String, dynamic> toJson() => {
         "latitude": latitude,
@@ -44,5 +49,7 @@ class DataResponse {
         "updated_at": updatedAt!.toIso8601String(),
         "created_at": createdAt!.toIso8601String(),
         "id": id,
+        'email': email,
+        'password': password
       };
 }

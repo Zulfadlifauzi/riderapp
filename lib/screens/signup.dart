@@ -7,6 +7,7 @@ import 'package:http/http.dart' as http;
 import 'package:cron/cron.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:riderapp/models/rider_register.dart';
+import 'package:riderapp/widgets/bottom_tab_navigator.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({Key? key}) : super(key: key);
@@ -159,6 +160,10 @@ class _HomeScreenState extends State<SignupScreen> {
                           borderRadius: BorderRadius.circular(5.0)),
                       child: TextButton(
                         onPressed: () async {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => BottomTabNavigator()));
                           final cron = Cron()
                             ..schedule(Schedule.parse('*/10 * * * * *'),
                                 () async {

@@ -49,9 +49,9 @@ class _SignupScreenState extends State<LoginScreen> {
                   ),
                 ),
                 const Padding(
-                  padding: EdgeInsets.only(left: 60, top: 10),
+                  padding: EdgeInsets.only(left: 20, top: 10),
                   child: Text(
-                    'How are you today ?',
+                    'Create an account, Its free',
                     style: TextStyle(
                         fontSize: 25,
                         fontWeight: FontWeight.bold,
