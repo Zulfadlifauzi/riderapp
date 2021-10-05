@@ -22,7 +22,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
         centerTitle: true,
         backgroundColor: Colors.black,
       ),
-      body: Container(
+      body: SizedBox(
         width: double.infinity,
         child: Column(
           children: <Widget>[
@@ -37,10 +37,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               children: <Widget>[
                 Padding(
                   padding: const EdgeInsets.only(top: 20),
-                  child: Container(
-                      child: Text('Enter your email to reset your password',
-                          style: GoogleFonts.staatliches(
-                              letterSpacing: 1, fontSize: 20))),
+                  child: Text('Enter your email to reset your password',
+                      style: GoogleFonts.staatliches(
+                          letterSpacing: 1, fontSize: 20)),
                 )
               ],
             ),
@@ -49,7 +48,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 Padding(
                   padding: const EdgeInsets.only(left: 30, top: 20, right: 30),
                   child: TextFormField(
-                    decoration: InputDecoration(labelText: 'Enter your email'),
+                    decoration:
+                        const InputDecoration(labelText: 'Enter your email'),
                     validator: MultiValidator([
                       RequiredValidator(errorText: 'Enter your email'),
                       EmailValidator(errorText: 'Invalid email')
@@ -64,12 +64,12 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   padding: const EdgeInsets.only(left: 30, right: 30, top: 20),
                   child: Container(
                     width: double.infinity,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Colors.black,
                     ),
                     child: TextButton(
                       onPressed: () {},
-                      child: Text(
+                      child: const Text(
                         'Reset Password',
                         style: TextStyle(color: Colors.white),
                       ),

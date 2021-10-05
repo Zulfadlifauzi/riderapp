@@ -6,7 +6,6 @@ import 'package:riderapp/screens/history.dart';
 import 'package:riderapp/screens/map.dart';
 import 'package:riderapp/screens/status.dart';
 import 'package:riderapp/screens/wallet.dart';
-import 'package:riderapp/widgets/drawer_tab_navigator.dart';
 
 class BottomTabNavigator extends StatefulWidget {
   const BottomTabNavigator({Key? key}) : super(key: key);

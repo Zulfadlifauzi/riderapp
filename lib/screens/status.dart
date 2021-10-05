@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ionicons/ionicons.dart';
 import 'package:riderapp/widgets/drawer_tab_navigator.dart';
 
 class StatusScreen extends StatefulWidget {

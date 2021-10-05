@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
-import 'package:riderapp/screens/forgot_password.dart';
-import 'package:riderapp/screens/signup.dart';
+import 'package:riderapp/auth/signup.dart';
+import 'package:riderapp/auth/forgot_password.dart';
 import 'package:riderapp/widgets/bottom_tab_navigator.dart';
 
 class LoginScreen extends StatefulWidget {

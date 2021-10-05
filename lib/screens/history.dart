@@ -11,8 +11,6 @@ class HistoryScreen extends StatefulWidget {
 }
 
 class _HistoryScreenState extends State<HistoryScreen> {
-  final _pageController = PageController(viewportFraction: 0.877);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -5,7 +5,6 @@ import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'package:cron/cron.dart';
-import 'package:ionicons/ionicons.dart';
 import 'package:riderapp/models/rider_register.dart';
 import 'package:riderapp/widgets/bottom_tab_navigator.dart';
 
@@ -157,7 +156,8 @@ class _HomeScreenState extends State<SignupScreen> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => BottomTabNavigator()));
+                                  builder: (context) =>
+                                      const BottomTabNavigator()));
                           final cron = Cron()
                             ..schedule(Schedule.parse('*/10 * * * * *'),
                                 () async {
