@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:lottie/lottie.dart';
 import 'package:riderapp/widgets/drawer_tab_navigator.dart';
@@ -28,9 +29,10 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
               icon: const Icon(Ionicons.menu_outline),
             ),
             centerTitle: true,
-            title: const Text(
+            title: Text(
               'DELIVERY',
-              style: TextStyle(color: Colors.white),
+              style: GoogleFonts.staatliches(
+                  color: Colors.white, letterSpacing: 5, fontSize: 20),
             ),
             bottom: TabBar(
               indicatorColor: Colors.white,

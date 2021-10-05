@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:ionicons/ionicons.dart';
 
 class WalletScreen extends StatefulWidget {
@@ -15,9 +16,10 @@ class _WalletScreenState extends State<WalletScreen> {
       appBar: AppBar(
         backgroundColor: Colors.black,
         centerTitle: true,
-        title: const Text(
+        title: Text(
           'WALLET',
-          style: TextStyle(color: Colors.white),
+          style: GoogleFonts.staatliches(
+              color: Colors.white, letterSpacing: 5, fontSize: 20),
         ),
         leading: IconButton(
           onPressed: () {},

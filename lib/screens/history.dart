@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:ionicons/ionicons.dart';
 
 class HistoryScreen extends StatefulWidget {
@@ -17,9 +18,10 @@ class _HistoryScreenState extends State<HistoryScreen> {
       appBar: AppBar(
         backgroundColor: Colors.black,
         centerTitle: true,
-        title: const Text(
+        title: Text(
           'HISTORY',
-          style: TextStyle(color: Colors.white),
+          style: GoogleFonts.staatliches(
+              color: Colors.white, letterSpacing: 5, fontSize: 20),
         ),
         leading: IconButton(
           onPressed: () {},
@@ -33,33 +35,33 @@ class _HistoryScreenState extends State<HistoryScreen> {
             children: [
               Column(
                 children: [
-                  Divider(
+                  const Divider(
                     thickness: 1,
                   ),
                   Row(
                     // ignore: prefer_const_literals_to_create_immutables
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 10),
+                      const Padding(
+                        padding: EdgeInsets.only(left: 10),
                         child: Icon(Ionicons.wallet_outline),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 10.0),
+                      const Padding(
+                        padding: EdgeInsets.only(left: 10.0),
                         child: Text(
                           'h62j-k22k',
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 220),
+                      const Padding(
+                        padding: EdgeInsets.only(left: 220),
                         child: Text('RM45'),
                       ),
-                      Divider(),
+                      const Divider(),
                     ],
                   ),
                   Row(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 10),
+                      const Padding(
+                        padding: EdgeInsets.only(left: 10),
                         child: Icon(Ionicons.location_outline),
                       ),
                       Column(
@@ -90,7 +92,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                       ),
                     ],
                   ),
-                  Divider(
+                  const Divider(
                     thickness: 1,
                   ),
                 ],
@@ -99,7 +101,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
           ),
           height: double.infinity,
           width: double.infinity,
-          decoration: BoxDecoration(color: Colors.white),
+          decoration: const BoxDecoration(color: Colors.white),
         ),
       ),
     );

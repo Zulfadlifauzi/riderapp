@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:riderapp/widgets/drawer_tab_navigator.dart';
 
@@ -18,9 +19,10 @@ class _StatusScreenState extends State<StatusScreen> {
       appBar: AppBar(
         backgroundColor: Colors.black,
         centerTitle: true,
-        title: const Text(
+        title: Text(
           'STATUS',
-          style: TextStyle(color: Colors.white),
+          style: GoogleFonts.staatliches(
+              color: Colors.white, letterSpacing: 5, fontSize: 20),
         ),
         leading: IconButton(
           onPressed: () {

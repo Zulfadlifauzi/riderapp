@@ -47,18 +47,12 @@ class _HomeScreenState extends State<SignupScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context, true);
-          },
-          icon: const Icon(
-            Ionicons.arrow_back_outline,
-          ),
+        centerTitle: true,
+        title: Text(
+          'Register',
+          style: GoogleFonts.staatliches(
+              color: Colors.white, letterSpacing: 2, fontSize: 20),
         ),
-        // title: Text(
-        //   'Locating user location',
-        //   style: GoogleFonts.varela(color: Colors.black),
-        // ),
         elevation: 0,
         backgroundColor: Colors.black,
       ),

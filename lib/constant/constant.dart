@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 const kPrimaryColor = Color(0xFFFF7F50);
 const kSecondaryColor = Color(0xFFFE9901);
@@ -8,8 +9,8 @@ const kWarninngColor = Color(0xFFF3BB1C);
 const kErrorColor = Color(0xFFF03738);
 const kTextColor = Color(0xFF58804D);
 const kBackgroundColor = Color(0xFFFFFBF5);
-const kDefaultPadding = 20.0;
 
+const kDefaultPadding = 20.0;
 const defaultPadding = 20.0;
 const cartBarHeight = 100.0;
 const headerHeight = 85.0;
