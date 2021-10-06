@@ -43,6 +43,7 @@ dependencies:
   geolocator: ^7.6.2
   google_fonts: ^2.1.0
   cron: ^0.3.2
+  circular_profile_avatar: ^2.0.5
 
 dev_dependencies:
   flutter_test:

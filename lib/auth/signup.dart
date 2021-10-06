@@ -85,7 +85,7 @@ class _HomeScreenState extends State<SignupScreen> {
                       key: formKey,
                       child: Column(
                         children: [
-                          SizedBox(height: 120),
+                          const SizedBox(height: 120),
                           TextFormField(
                             controller: nameController,
                             decoration: const InputDecoration(
@@ -133,7 +133,7 @@ class _HomeScreenState extends State<SignupScreen> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: <Widget>[
-                      SizedBox(height: 480),
+                      const SizedBox(height: 480),
                       // if (_currentPosition != null)
                       //   Text(
                       //       'Longitude: ${_currentPosition!.longitude} \nLatitude: ${_currentPosition!.latitude}'),
@@ -154,7 +154,7 @@ class _HomeScreenState extends State<SignupScreen> {
                 padding: const EdgeInsets.only(left: 40, right: 40),
                 child: Column(
                   children: [
-                    SizedBox(height: 450),
+                    const SizedBox(height: 450),
                     Container(
                       width: double.infinity,
                       decoration: BoxDecoration(

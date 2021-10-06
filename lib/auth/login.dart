@@ -60,7 +60,7 @@ class _SignupScreenState extends State<LoginScreen> {
                   ),
                 ),
                 const SizedBox(height: 1),
-                Container(
+                SizedBox(
                   width: double.infinity,
                   height: 150,
                   child: Lottie.asset('assets/lottie/rider.json'),
