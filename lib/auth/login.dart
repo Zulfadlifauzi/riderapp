@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
+import 'package:lottie/lottie.dart';
 import 'package:riderapp/auth/signup.dart';
 import 'package:riderapp/auth/forgot_password.dart';
 import 'package:riderapp/widgets/bottom_tab_navigator.dart';
@@ -62,11 +63,8 @@ class _SignupScreenState extends State<LoginScreen> {
                 SizedBox(
                   height: height * 0.03,
                 ),
-                const Padding(
-                    padding: EdgeInsets.only(left: 20, top: 10),
-                    child: Text('hello')),
-                SizedBox(
-                  height: height * 0.03,
+                Container(
+                  child: Lottie.asset('assets/lottie/rider.json'),
                 ),
                 SizedBox(height: height * 0.05),
                 TextFormField(
