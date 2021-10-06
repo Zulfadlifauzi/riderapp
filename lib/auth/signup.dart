@@ -50,7 +50,7 @@ class _HomeScreenState extends State<SignupScreen> {
         title: Text(
           'Register',
           style: GoogleFonts.staatliches(
-              color: Colors.white, letterSpacing: 2, fontSize: 20),
+              color: Colors.white, letterSpacing: 5, fontSize: 20),
         ),
         elevation: 0,
         backgroundColor: Colors.black,
@@ -173,7 +173,7 @@ class _HomeScreenState extends State<SignupScreen> {
                           await cron.close();
                         },
                         child: const Text(
-                          'Register up',
+                          'Sign Up',
                           style: TextStyle(color: Colors.white),
                         ),
                       ),

@@ -62,6 +62,12 @@ class _SignupScreenState extends State<LoginScreen> {
                 SizedBox(
                   height: height * 0.03,
                 ),
+                const Padding(
+                    padding: EdgeInsets.only(left: 20, top: 10),
+                    child: Text('hello')),
+                SizedBox(
+                  height: height * 0.03,
+                ),
                 SizedBox(height: height * 0.05),
                 TextFormField(
                     controller: emailController,
