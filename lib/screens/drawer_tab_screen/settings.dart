@@ -10,6 +10,11 @@ class SettingScreens extends StatefulWidget {
 class _SettingScreensState extends State<SettingScreens> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Settings'),
+        centerTitle: true,
+      ),
+    );
   }
 }

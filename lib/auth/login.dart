@@ -39,11 +39,10 @@ class _SignupScreenState extends State<LoginScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: height * 0.04),
                 const Padding(
                   padding: EdgeInsets.only(left: 100),
                   child: Text(
-                    'Hello Again!',
+                    'Hello Again,',
                     style: TextStyle(
                         fontSize: 25,
                         fontWeight: FontWeight.bold,
@@ -51,22 +50,21 @@ class _SignupScreenState extends State<LoginScreen> {
                   ),
                 ),
                 const Padding(
-                  padding: EdgeInsets.only(left: 20, top: 10),
+                  padding: EdgeInsets.only(left: 85, top: 10),
                   child: Text(
-                    'Create an account, Its free',
+                    'Welcome back!',
                     style: TextStyle(
                         fontSize: 25,
                         fontWeight: FontWeight.bold,
                         color: Colors.black),
                   ),
                 ),
-                SizedBox(
-                  height: height * 0.03,
-                ),
+                const SizedBox(height: 1),
                 Container(
+                  width: double.infinity,
+                  height: 150,
                   child: Lottie.asset('assets/lottie/rider.json'),
                 ),
-                SizedBox(height: height * 0.05),
                 TextFormField(
                     controller: emailController,
                     decoration:

@@ -10,6 +10,11 @@ class CustomerServiceScreen extends StatefulWidget {
 class _CustomerServiceScreenState extends State<CustomerServiceScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Customer Service'),
+        centerTitle: true,
+      ),
+    );
   }
 }

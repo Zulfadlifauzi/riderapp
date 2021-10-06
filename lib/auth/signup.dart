@@ -32,11 +32,15 @@ Future<CreateUserRequest> createUser(
 
 class _HomeScreenState extends State<SignupScreen> {
   final nameController = TextEditingController();
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
   final latController = TextEditingController();
   final longController = TextEditingController();
 
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   Position? _currentPosition;
+  bool hidePassword = true;
 
   @override
   Widget build(BuildContext context) {
@@ -59,15 +63,14 @@ class _HomeScreenState extends State<SignupScreen> {
         child: Stack(
           children: <Widget>[
             Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
+              children: const [
+                SizedBox(height: 50),
                 Padding(
-                  padding: const EdgeInsets.only(left: 85, top: 20),
-                  child: Text(
-                      'Enable your location ! \nFor new live delivery experience',
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.staatliches(
+                  padding: EdgeInsets.only(left: 80),
+                  child: Text('Create an account, its free',
+                      style: TextStyle(
                         fontSize: 20,
+                        fontWeight: FontWeight.bold,
                       )),
                 ),
               ],
@@ -78,25 +81,31 @@ class _HomeScreenState extends State<SignupScreen> {
                 Padding(
                   padding: const EdgeInsets.only(left: 40, right: 40),
                   child: Container(
-                    margin: const EdgeInsets.only(top: 80),
                     child: Form(
                       key: formKey,
                       child: Column(
                         children: [
+                          SizedBox(height: 120),
                           TextFormField(
                             controller: nameController,
                             decoration: const InputDecoration(
-                                labelText: 'Enter your name'),
+                              // border: OutlineInputBorder(),
+                              labelText: 'Enter your name',
+                              labelStyle: TextStyle(color: Colors.grey),
+                            ),
                           ),
                           TextFormField(
-                            controller: nameController,
+                            controller: emailController,
                             decoration: const InputDecoration(
-                                labelText: 'Enter your email'),
+                                labelText: 'Enter your email',
+                                labelStyle: TextStyle(color: Colors.grey)),
                           ),
                           TextFormField(
-                            controller: nameController,
+                            obscureText: hidePassword,
+                            controller: passwordController,
                             decoration: const InputDecoration(
-                                labelText: 'Enter your password'),
+                                labelText: 'Enter your password',
+                                labelStyle: TextStyle(color: Colors.grey)),
                           ),
                           TextFormField(
                             enabled: false,
@@ -121,10 +130,10 @@ class _HomeScreenState extends State<SignupScreen> {
               child: Padding(
                 padding: const EdgeInsets.only(left: 40, right: 40),
                 child: Container(
-                  margin: const EdgeInsets.only(top: 430),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: <Widget>[
+                      SizedBox(height: 480),
                       // if (_currentPosition != null)
                       //   Text(
                       //       'Longitude: ${_currentPosition!.longitude} \nLatitude: ${_currentPosition!.latitude}'),
@@ -145,9 +154,9 @@ class _HomeScreenState extends State<SignupScreen> {
                 padding: const EdgeInsets.only(left: 40, right: 40),
                 child: Column(
                   children: [
+                    SizedBox(height: 450),
                     Container(
                       width: double.infinity,
-                      margin: const EdgeInsets.only(top: 400),
                       decoration: BoxDecoration(
                           color: Colors.black,
                           borderRadius: BorderRadius.circular(5.0)),
