@@ -52,22 +52,34 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(top: 60),
-            height: 45,
+            margin: const EdgeInsets.only(top: 230),
+            height: 150,
+            width: double.infinity,
             child: ListView.builder(
               itemCount: levelup.length,
               scrollDirection: Axis.horizontal,
-              physics: BouncingScrollPhysics(),
-              padding: EdgeInsets.only(left: 28, right: 10),
+              physics: const BouncingScrollPhysics(),
+              padding: const EdgeInsets.only(left: 28, right: 10),
               itemBuilder: (context, index) {
                 return Container(
-                  margin: EdgeInsets.only(right: 20),
+                  margin: const EdgeInsets.only(right: 20),
                   height: 45,
+                  width: 150,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(9.6),
+                      borderRadius: BorderRadius.circular(5),
                       color: Colors.white),
-                  child: Row(
-                    children: <Widget>[Image.asset(levelup[index].image!)],
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 100),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          levelup[index].name!,
+                          textAlign: TextAlign.center,
+                        )
+                      ],
+                    ),
                   ),
                 );
               },
