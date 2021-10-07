@@ -146,10 +146,7 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
                                           fontWeight: FontWeight.bold),
                                     ),
                                   ),
-                                  Padding(
-                                    padding: EdgeInsets.only(left: 1),
-                                    child: Text('Menara U'),
-                                  )
+                                  Text('Menara U'),
                                 ],
                               ),
                               Divider(),

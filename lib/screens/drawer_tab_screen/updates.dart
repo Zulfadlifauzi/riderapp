@@ -24,8 +24,8 @@ class _UpdateScreenState extends State<UpdateScreen> {
       body: Column(
         children: <Widget>[
           Container(
-            margin: EdgeInsets.only(left: 20, top: 20),
-            child: Text(
+            margin: const EdgeInsets.only(left: 20, top: 20),
+            child: const Text(
               'Check out new update!',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
@@ -33,10 +33,10 @@ class _UpdateScreenState extends State<UpdateScreen> {
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
             child: Container(
-              margin: EdgeInsets.only(left: 10, right: 10),
+              margin: const EdgeInsets.only(left: 10, right: 10),
               width: double.infinity,
               height: 100,
-              child: Text(
+              child: const Text(
                   'orem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rutrum, urna in sollicitudin pretium, sapien lacus luctus purus, non efficitur felis turpis consectetur nulla. Donec cursus diam eros. s'),
             ),
           )

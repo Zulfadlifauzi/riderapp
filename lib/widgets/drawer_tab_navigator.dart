@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:riderapp/auth/login.dart';
-import 'package:riderapp/screens/drawer_tab_screen/customer_service.dart';
+import 'package:riderapp/screens/drawer_tab_screen/Help_center.dart';
 import 'package:riderapp/screens/history.dart';
 import 'package:riderapp/screens/notifications.dart';
 import 'package:riderapp/screens/drawer_tab_screen/profile.dart';
@@ -44,7 +44,7 @@ class _DrawerTabState extends State<DrawerTab> {
               height: 16,
             ),
             buildMenuItem(
-                text: 'Customer Service',
+                text: 'Help center',
                 icon: Ionicons.chatbox_outline,
                 onClicked: () => selectedItem(context, 2)),
             const SizedBox(
@@ -96,8 +96,8 @@ void selectedItem(BuildContext context, int index) {
       break;
 
     case 2:
-      Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => const CustomerServiceScreen()));
+      Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => const HelpCenterScreen()));
       break;
     case 3:
       Navigator.of(context)
