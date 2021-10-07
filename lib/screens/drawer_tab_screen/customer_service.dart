@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CustomerServiceScreen extends StatefulWidget {
   const CustomerServiceScreen({Key? key}) : super(key: key);
@@ -12,8 +13,13 @@ class _CustomerServiceScreenState extends State<CustomerServiceScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Customer Service'),
+        title: Text(
+          'Customer Service',
+          style: GoogleFonts.staatliches(
+              color: Colors.white, letterSpacing: 5, fontSize: 20),
+        ),
         centerTitle: true,
+        backgroundColor: Colors.black,
       ),
     );
   }

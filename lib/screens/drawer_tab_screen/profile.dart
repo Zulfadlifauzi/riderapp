@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:circular_profile_avatar/circular_profile_avatar.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:riderapp/models/achievement.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -14,8 +15,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Profile'),
+        title: Text(
+          'Profile',
+          style: GoogleFonts.staatliches(
+              color: Colors.white, letterSpacing: 5, fontSize: 20),
+        ),
         centerTitle: true,
+        backgroundColor: Colors.black,
       ),
       body: Stack(
         children: <Widget>[
@@ -37,17 +43,26 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
             ],
           ),
+          const Padding(
+            padding: EdgeInsets.only(top: 180),
+            child: Divider(thickness: 1),
+          ),
           Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20, top: 200),
+            padding: const EdgeInsets.only(left: 20, right: 20, top: 185),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: const <Widget>[
-                Text(
+              children: <Widget>[
+                const Text(
                   'Achievement',
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
-                Text('See All')
+                TextButton(
+                    onPressed: () {},
+                    child: const Text(
+                      'See All',
+                      style: TextStyle(color: Colors.grey),
+                    ))
               ],
             ),
           ),
@@ -59,7 +74,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               itemCount: levelup.length,
               scrollDirection: Axis.horizontal,
               physics: const BouncingScrollPhysics(),
-              padding: const EdgeInsets.only(left: 28, right: 10),
+              padding: const EdgeInsets.only(left: 20, right: 10),
               itemBuilder: (context, index) {
                 return Container(
                   margin: const EdgeInsets.only(right: 20),
@@ -74,9 +89,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
-                        Text(
-                          levelup[index].name!,
-                          textAlign: TextAlign.center,
+                        Column(
+                          children: [
+                            Text(
+                              levelup[index].name!,
+                            ),
+                            const SizedBox(height: 5),
+                            Text(
+                              levelup[index].status!,
+                              style: const TextStyle(
+                                  color: Colors.greenAccent,
+                                  fontWeight: FontWeight.bold),
+                            )
+                          ],
                         )
                       ],
                     ),

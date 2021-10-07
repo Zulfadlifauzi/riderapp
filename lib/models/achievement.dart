@@ -28,7 +28,7 @@ var levelupData = [
   },
   {
     'name': 'Send 10 Order',
-    'status': 'Ongoing',
+    'status': 'Completed',
     'image':
         'https://www.e-maik.my/v2/images/masjid/Masjid-Muhammadi/DSC_3805.jpg'
   },

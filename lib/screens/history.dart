@@ -23,7 +23,6 @@ class _HistoryScreenState extends State<HistoryScreen> {
               color: Colors.white, letterSpacing: 5, fontSize: 20),
         ),
       ),
-      drawer: const DrawerTab(),
       body: Padding(
         padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
         child: Container(

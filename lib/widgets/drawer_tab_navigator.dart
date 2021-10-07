@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:riderapp/auth/login.dart';
 import 'package:riderapp/screens/drawer_tab_screen/customer_service.dart';
-import 'package:riderapp/screens/drawer_tab_screen/notifications.dart';
+import 'package:riderapp/screens/history.dart';
+import 'package:riderapp/screens/notifications.dart';
 import 'package:riderapp/screens/drawer_tab_screen/profile.dart';
 import 'package:riderapp/screens/drawer_tab_screen/settings.dart';
 import 'package:riderapp/screens/drawer_tab_screen/updates.dart';
@@ -25,7 +26,7 @@ class _DrawerTabState extends State<DrawerTab> {
           padding: padding,
           children: <Widget>[
             const SizedBox(
-              height: 50,
+              height: 80,
             ),
             buildMenuItem(
               text: 'Profile',
@@ -36,10 +37,9 @@ class _DrawerTabState extends State<DrawerTab> {
               height: 16,
             ),
             buildMenuItem(
-              text: 'Settings',
-              icon: Ionicons.settings_outline,
-              onClicked: () => selectedItem(context, 1),
-            ),
+                text: 'History',
+                icon: Icons.history,
+                onClicked: () => selectedItem(context, 1)),
             const SizedBox(
               height: 16,
             ),
@@ -55,20 +55,12 @@ class _DrawerTabState extends State<DrawerTab> {
                 icon: Icons.update,
                 onClicked: () => selectedItem(context, 3)),
             const SizedBox(
-              height: 16,
-            ),
-            const Divider(color: Colors.white, thickness: 5),
-            buildMenuItem(
-                text: 'Notifications',
-                icon: Ionicons.notifications_outline,
-                onClicked: () => selectedItem(context, 4)),
-            const SizedBox(
-              height: 295,
+              height: 3620,
             ),
             buildMenuItem(
                 text: 'Sign out',
                 icon: Ionicons.log_out_outline,
-                onClicked: () => selectedItem(context, 5))
+                onClicked: () => selectedItem(context, 4))
           ],
         ),
       ),
@@ -99,9 +91,10 @@ void selectedItem(BuildContext context, int index) {
           .push(MaterialPageRoute(builder: (context) => const ProfileScreen()));
       break;
     case 1:
-      Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => const SettingScreens()));
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => const HistoryScreen()));
       break;
+
     case 2:
       Navigator.of(context).push(MaterialPageRoute(
           builder: (context) => const CustomerServiceScreen()));
@@ -111,10 +104,6 @@ void selectedItem(BuildContext context, int index) {
           .push(MaterialPageRoute(builder: (context) => const UpdateScreen()));
       break;
     case 4:
-      Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => const NotificationScreens()));
-      break;
-    case 5:
       Navigator.of(context)
           .push(MaterialPageRoute(builder: (context) => const LoginScreen()));
       break;

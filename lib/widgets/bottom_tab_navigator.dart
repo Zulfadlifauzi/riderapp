@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:riderapp/constant/constant.dart';
 import 'package:riderapp/screens/delivery.dart';
-import 'package:riderapp/screens/history.dart';
 import 'package:riderapp/screens/map.dart';
+import 'package:riderapp/screens/notifications.dart';
 import 'package:riderapp/screens/status.dart';
 import 'package:riderapp/screens/wallet.dart';
 import 'package:riderapp/widgets/drawer_tab_navigator.dart';
@@ -21,7 +21,7 @@ class _BottomTabNavigatorState extends State<BottomTabNavigator> {
     const StatusScreen(),
     const DeliveryScreen(),
     const MapScreen(),
-    const HistoryScreen(),
+    const NotificationScreens(),
     const WalletScreen(),
   ];
   @override
@@ -46,7 +46,9 @@ class _BottomTabNavigatorState extends State<BottomTabNavigator> {
           BottomNavigationBarItem(
               icon: Icon(Icons.list_outlined), label: 'Deliveries'),
           BottomNavigationBarItem(icon: Icon(Icons.map_outlined), label: 'Map'),
-          BottomNavigationBarItem(icon: Icon(Icons.history), label: 'History'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.notifications_active_outlined),
+              label: 'Notifications'),
           BottomNavigationBarItem(icon: Icon(Ionicons.wallet), label: 'Wallet'),
         ],
       ),
