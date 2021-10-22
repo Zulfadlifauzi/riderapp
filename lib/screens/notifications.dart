@@ -44,7 +44,7 @@ class _NotificationScreensState extends State<NotificationScreens> {
               ],
             ),
           ),
-          Divider(thickness: 1),
+          const Divider(thickness: 1),
           Container(
             decoration: const BoxDecoration(color: Colors.white70),
             width: double.infinity,
@@ -65,7 +65,7 @@ class _NotificationScreensState extends State<NotificationScreens> {
               ],
             ),
           ),
-          Divider(thickness: 1),
+          const Divider(thickness: 1),
           Container(
             decoration: const BoxDecoration(color: Colors.white70),
             width: double.infinity,
@@ -86,7 +86,7 @@ class _NotificationScreensState extends State<NotificationScreens> {
               ],
             ),
           ),
-          Divider(thickness: 1),
+          const Divider(thickness: 1),
           Container(
             decoration: const BoxDecoration(color: Colors.white70),
             width: double.infinity,
@@ -107,7 +107,7 @@ class _NotificationScreensState extends State<NotificationScreens> {
               ],
             ),
           ),
-          Divider(thickness: 1),
+          const Divider(thickness: 1),
           Container(
             decoration: const BoxDecoration(color: Colors.white70),
             width: double.infinity,
@@ -128,7 +128,7 @@ class _NotificationScreensState extends State<NotificationScreens> {
               ],
             ),
           ),
-          Divider(thickness: 1)
+          const Divider(thickness: 1)
         ],
       ),
     );

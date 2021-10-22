@@ -24,8 +24,8 @@ class _CustomerServiceScreenState extends State<HelpCenterScreen> {
       body: Column(
         children: <Widget>[
           Container(
-            margin: EdgeInsets.only(top: 20),
-            child: Text(
+            margin: const EdgeInsets.only(top: 20),
+            child: const Text(
               'How we can assist you?',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
@@ -51,7 +51,7 @@ class _CustomerServiceScreenState extends State<HelpCenterScreen> {
               ],
             ),
           ),
-          Divider(thickness: 1),
+          const Divider(thickness: 1),
           Container(
             decoration: const BoxDecoration(color: Colors.white70),
             width: double.infinity,
@@ -72,7 +72,7 @@ class _CustomerServiceScreenState extends State<HelpCenterScreen> {
               ],
             ),
           ),
-          Divider(thickness: 1),
+          const Divider(thickness: 1),
           Container(
             decoration: const BoxDecoration(color: Colors.white70),
             width: double.infinity,
@@ -93,7 +93,7 @@ class _CustomerServiceScreenState extends State<HelpCenterScreen> {
               ],
             ),
           ),
-          Divider(thickness: 1),
+          const Divider(thickness: 1),
           Container(
             decoration: const BoxDecoration(color: Colors.white70),
             width: double.infinity,
@@ -114,7 +114,7 @@ class _CustomerServiceScreenState extends State<HelpCenterScreen> {
               ],
             ),
           ),
-          Divider(thickness: 1),
+          const Divider(thickness: 1),
           Container(
             decoration: const BoxDecoration(color: Colors.white70),
             width: double.infinity,
@@ -135,7 +135,7 @@ class _CustomerServiceScreenState extends State<HelpCenterScreen> {
               ],
             ),
           ),
-          Divider(thickness: 1)
+          const Divider(thickness: 1)
         ],
       ),
     );
