@@ -11,6 +11,8 @@ class StatusScreen extends StatefulWidget {
   _StatusScreenState createState() => _StatusScreenState();
 }
 
+var _activeStatus = false;
+
 class _StatusScreenState extends State<StatusScreen> {
   @override
   Widget build(BuildContext context) {
@@ -33,7 +35,7 @@ class _StatusScreenState extends State<StatusScreen> {
             children: <Widget>[
               const SizedBox(height: 1.0),
               Text(
-                'Youre online',
+                _activeStatus ? 'Youre online' : 'Youre offline',
                 style: TextStyle(fontSize: 20),
               ),
               Divider(),
@@ -73,9 +75,13 @@ class _StatusScreenState extends State<StatusScreen> {
                     color: Colors.black,
                   ),
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        _activeStatus = !_activeStatus;
+                      });
+                    },
                     child: Text(
-                      'Stop',
+                      _activeStatus ? 'Stop' : 'Start',
                       style: TextStyle(color: Colors.white),
                     ),
                   ),
