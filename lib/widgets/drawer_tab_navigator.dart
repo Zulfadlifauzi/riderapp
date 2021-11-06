@@ -23,44 +23,52 @@ class _DrawerTabState extends State<DrawerTab> {
       child: Material(
         color: Colors.black,
         child: ListView(
+          shrinkWrap: true,
+          physics: BouncingScrollPhysics(),
           padding: padding,
           children: <Widget>[
-            const SizedBox(
-              height: 80,
-            ),
-            buildMenuItem(
-              text: 'Profile',
-              icon: Ionicons.person_outline,
-              onClicked: () => selectedItem(context, 0),
-            ),
-            const SizedBox(
-              height: 16,
-            ),
-            buildMenuItem(
-                text: 'History',
-                icon: Icons.history,
-                onClicked: () => selectedItem(context, 1)),
-            const SizedBox(
-              height: 16,
-            ),
-            buildMenuItem(
-                text: 'Help center',
-                icon: Ionicons.chatbox_outline,
-                onClicked: () => selectedItem(context, 2)),
-            const SizedBox(
-              height: 16,
-            ),
-            buildMenuItem(
-                text: 'Updates',
-                icon: Icons.update,
-                onClicked: () => selectedItem(context, 3)),
-            const SizedBox(
-              height: 330,
-            ),
-            buildMenuItem(
-                text: 'Sign out',
-                icon: Ionicons.log_out_outline,
-                onClicked: () => selectedItem(context, 4))
+            Container(
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 50,
+                  ),
+                  buildMenuItem(
+                    text: 'Profile',
+                    icon: Ionicons.person_outline,
+                    onClicked: () => selectedItem(context, 0),
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  buildMenuItem(
+                      text: 'History',
+                      icon: Icons.history,
+                      onClicked: () => selectedItem(context, 1)),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  buildMenuItem(
+                      text: 'Help center',
+                      icon: Ionicons.chatbox_outline,
+                      onClicked: () => selectedItem(context, 2)),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  buildMenuItem(
+                      text: 'Updates',
+                      icon: Icons.update,
+                      onClicked: () => selectedItem(context, 3)),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  buildMenuItem(
+                      text: 'Sign out',
+                      icon: Ionicons.log_out_outline,
+                      onClicked: () => selectedItem(context, 4))
+                ],
+              ),
+            )
           ],
         ),
       ),

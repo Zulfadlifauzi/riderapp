@@ -60,28 +60,28 @@ class _HistoryScreenState extends State<HistoryScreen> {
                         child: Icon(Ionicons.location_outline),
                       ),
                       Column(
-                        children: const [
-                          Padding(
-                            padding: EdgeInsets.only(right: 40, top: 20),
-                            child: Text(
-                              'Pick up',
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.only(left: 10, top: 20),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: const [
+                                Text(
+                                  'Pick up',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                                Text('Pizza Hut \naeon shah alam'),
+                                Padding(
+                                  padding: EdgeInsets.only(right: 15, top: 20),
+                                  child: Text(
+                                    'Dropped off',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                                Text('Menara U'),
+                              ],
                             ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(left: 10.0),
-                            child: Text('Pizza Hut \naeon shah alam'),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(right: 15, top: 20),
-                            child: Text(
-                              'Dropped off',
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(left: 1),
-                            child: Text('Menara U'),
                           )
                         ],
                       ),

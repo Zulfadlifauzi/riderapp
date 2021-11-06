@@ -35,19 +35,19 @@ class _StatusScreenState extends State<StatusScreen> {
               const SizedBox(height: 1.0),
               Text(
                 _activeStatus ? 'Youre online' : 'Youre offline',
-                style: TextStyle(fontSize: 20),
+                style: const TextStyle(fontSize: 20),
               ),
-              Divider(),
-              SizedBox(height: 5),
+              const Divider(),
+              const SizedBox(height: 5),
               Container(
                 child: _appearStatus(),
               ),
-              Divider(),
+              const Divider(),
               Padding(
                 padding: const EdgeInsets.only(top: 20),
                 child: Container(
                   width: 370,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Colors.black,
                   ),
                   child: TextButton(
@@ -106,5 +106,5 @@ _appearStatus() {
 
 _toggleReady() => Text(
       _activeStatus ? 'Stop' : 'Start',
-      style: TextStyle(color: Colors.white),
+      style: const TextStyle(color: Colors.white),
     );
