@@ -12,6 +12,7 @@ class StatusScreen extends StatefulWidget {
 }
 
 var _activeStatus = false;
+var _statusUpdate = false;
 
 class _StatusScreenState extends State<StatusScreen> {
   @override
@@ -40,32 +41,9 @@ class _StatusScreenState extends State<StatusScreen> {
               ),
               Divider(),
               SizedBox(height: 5),
-              Text(
-                'Location',
-                style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.grey,
-                    fontWeight: FontWeight.w300),
+              Container(
+                child: _appearStatus(),
               ),
-              Text('Shah Alam seksyen 13'),
-              SizedBox(height: 10),
-              Text(
-                'Total active order',
-                style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.grey,
-                    fontWeight: FontWeight.w300),
-              ),
-              Text('102 Orders'),
-              SizedBox(height: 10),
-              Text(
-                'Order nearest you',
-                style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.grey,
-                    fontWeight: FontWeight.w300),
-              ),
-              Text('32 Orders'),
               Divider(),
               Padding(
                 padding: const EdgeInsets.only(top: 20),
@@ -78,6 +56,7 @@ class _StatusScreenState extends State<StatusScreen> {
                     onPressed: () {
                       setState(() {
                         _activeStatus = !_activeStatus;
+                        _statusUpdate = !_statusUpdate;
                       });
                     },
                     child: Text(
@@ -92,5 +71,41 @@ class _StatusScreenState extends State<StatusScreen> {
         ),
       ),
     );
+  }
+}
+
+_appearStatus() {
+  if (_statusUpdate) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: const [
+        Text(
+          'Location',
+          style: TextStyle(
+              fontSize: 20, color: Colors.grey, fontWeight: FontWeight.w300),
+        ),
+        Text('Shah Alam seksyen 13'),
+        SizedBox(
+          height: 10,
+        ),
+        Text(
+          'Total active order',
+          style: TextStyle(
+              fontSize: 20, color: Colors.grey, fontWeight: FontWeight.w300),
+        ),
+        Text('102 Orders'),
+        SizedBox(
+          height: 10,
+        ),
+        Text(
+          'Order nearest you',
+          style: TextStyle(
+              fontSize: 20, color: Colors.grey, fontWeight: FontWeight.w300),
+        ),
+        Text('32 Orders'),
+      ],
+    );
+  } else {
+    return Container();
   }
 }
