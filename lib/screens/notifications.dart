@@ -24,113 +24,58 @@ class _NotificationScreensState extends State<NotificationScreens> {
       body: Column(
         children: <Widget>[
           Container(
-            margin: const EdgeInsets.only(top: 20),
-            decoration: const BoxDecoration(color: Colors.white70),
-            width: double.infinity,
-            height: 45,
-            child: Column(
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(top: 12, left: 10),
-                  child: Row(
-                    children: const <Widget>[
-                      Text(
-                        'Lorem ipsum dolor sit amet, \nconsectetur adipiscing elit',
-                        style: TextStyle(color: Colors.black),
-                      ),
-                    ],
-                  ),
-                )
-              ],
-            ),
-          ),
+              margin: const EdgeInsets.only(top: 10),
+              decoration: const BoxDecoration(color: Colors.white70),
+              width: double.infinity,
+              height: 45,
+              child: _column1()),
           const Divider(thickness: 1),
           Container(
-            decoration: const BoxDecoration(color: Colors.white70),
-            width: double.infinity,
-            height: 45,
-            child: Column(
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(top: 12, left: 10),
-                  child: Row(
-                    children: const <Widget>[
-                      Text(
-                        'Lorem ipsum dolor sit amet, \nconsectetur adipiscing elit',
-                        style: TextStyle(color: Colors.black),
-                      ),
-                    ],
-                  ),
-                )
-              ],
-            ),
-          ),
+              decoration: const BoxDecoration(color: Colors.white70),
+              width: double.infinity,
+              height: 45,
+              child: _column1()),
           const Divider(thickness: 1),
           Container(
-            decoration: const BoxDecoration(color: Colors.white70),
-            width: double.infinity,
-            height: 45,
-            child: Column(
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(top: 12, left: 10),
-                  child: Row(
-                    children: const <Widget>[
-                      Text(
-                        'Lorem ipsum dolor sit amet, \nconsectetur adipiscing elit',
-                        style: TextStyle(color: Colors.black),
-                      ),
-                    ],
-                  ),
-                )
-              ],
-            ),
-          ),
+              decoration: const BoxDecoration(color: Colors.white70),
+              width: double.infinity,
+              height: 45,
+              child: _column1()),
           const Divider(thickness: 1),
           Container(
-            decoration: const BoxDecoration(color: Colors.white70),
-            width: double.infinity,
-            height: 45,
-            child: Column(
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(top: 12, left: 10),
-                  child: Row(
-                    children: const <Widget>[
-                      Text(
-                        'Lorem ipsum dolor sit amet, \nconsectetur adipiscing elit',
-                        style: TextStyle(color: Colors.black),
-                      ),
-                    ],
-                  ),
-                )
-              ],
-            ),
-          ),
+              decoration: const BoxDecoration(color: Colors.white70),
+              width: double.infinity,
+              height: 45,
+              child: _column1()),
           const Divider(thickness: 1),
           Container(
-            decoration: const BoxDecoration(color: Colors.white70),
-            width: double.infinity,
-            height: 45,
-            child: Column(
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(top: 12, left: 10),
-                  child: Row(
-                    children: const <Widget>[
-                      Text(
-                        'Lorem ipsum dolor sit amet, \nconsectetur adipiscing elit',
-                        style: TextStyle(color: Colors.black),
-                      ),
-                    ],
-                  ),
-                )
-              ],
-            ),
-          ),
+              decoration: const BoxDecoration(color: Colors.white70),
+              width: double.infinity,
+              height: 45,
+              child: _column1()),
           const Divider(thickness: 1)
         ],
       ),
     );
   }
 }
+
+Widget _column1() => Column(
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.only(top: 12, left: 10),
+          child: Row(
+            children: <Widget>[
+              Column(
+                children: const [
+                  Text(
+                    'Lorem ipsum dolor sit amet, \nconsectetur adipiscing elit',
+                    style: TextStyle(color: Colors.black),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        )
+      ],
+    );
