@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:riderapp/widgets/drawer_tab_navigator.dart';
@@ -53,17 +51,13 @@ class _StatusScreenState extends State<StatusScreen> {
                     color: Colors.black,
                   ),
                   child: TextButton(
-                    onPressed: () {
-                      setState(() {
-                        _activeStatus = !_activeStatus;
-                        _statusUpdate = !_statusUpdate;
-                      });
-                    },
-                    child: Text(
-                      _activeStatus ? 'Stop' : 'Start',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
+                      onPressed: () {
+                        setState(() {
+                          _activeStatus = !_activeStatus;
+                          _statusUpdate = !_statusUpdate;
+                        });
+                      },
+                      child: _toggleReady()),
                 ),
               )
             ],
@@ -109,3 +103,8 @@ _appearStatus() {
     return Container();
   }
 }
+
+_toggleReady() => Text(
+      _activeStatus ? 'Stop' : 'Start',
+      style: TextStyle(color: Colors.white),
+    );
