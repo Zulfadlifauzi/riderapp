@@ -115,8 +115,8 @@ class _HomeScreenState extends State<SignupScreen> {
                         TextFormField(
                           enabled: false,
                           controller: latController,
-                          decoration: const InputDecoration(
-                              labelText: 'Your latitude'),
+                          decoration:
+                              const InputDecoration(labelText: 'Your latitude'),
                         ),
                       ],
                     ),
@@ -173,6 +173,7 @@ class _HomeScreenState extends State<SignupScreen> {
                                   await createUser(name, latitude, longitude);
                               setState(() {});
                               print(DateTime.now());
+                              _clearTextFormField();
                             });
                           await Future.delayed(const Duration(days: 1));
                           await cron.close();
@@ -206,5 +207,11 @@ class _HomeScreenState extends State<SignupScreen> {
     });
   }
 
-  void schedule(Schedule schedule, Null Function() param1) {}
+  _clearTextFormField() {
+    emailController.clear();
+    nameController.clear();
+    passwordController.clear();
+    longController.clear();
+    latController.clear();
+  }
 }

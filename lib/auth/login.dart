@@ -154,6 +154,8 @@ class _SignupScreenState extends State<LoginScreen> {
                             if (validateAndSave()) {
                               print(requestModel.toJson());
                             }
+                            emailController.clear();
+                            passController.clear();
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
