@@ -24,6 +24,7 @@ class _BottomTabNavigatorState extends State<BottomTabNavigator> {
     const NotificationScreens(),
     const WalletScreen(),
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

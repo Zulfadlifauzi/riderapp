@@ -3,9 +3,7 @@ import 'package:ionicons/ionicons.dart';
 import 'package:riderapp/auth/login.dart';
 import 'package:riderapp/screens/drawer_tab_screen/Help_center.dart';
 import 'package:riderapp/screens/history.dart';
-import 'package:riderapp/screens/notifications.dart';
 import 'package:riderapp/screens/drawer_tab_screen/profile.dart';
-import 'package:riderapp/screens/drawer_tab_screen/settings.dart';
 import 'package:riderapp/screens/drawer_tab_screen/updates.dart';
 
 class DrawerTab extends StatefulWidget {
@@ -16,7 +14,9 @@ class DrawerTab extends StatefulWidget {
 }
 
 class _DrawerTabState extends State<DrawerTab> {
-  final padding = const EdgeInsets.symmetric(horizontal: 20);
+  final padding = const EdgeInsets.symmetric(
+    horizontal: 5,
+  );
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -24,13 +24,13 @@ class _DrawerTabState extends State<DrawerTab> {
         color: Colors.black,
         child: ListView(
           shrinkWrap: true,
-          physics: BouncingScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           padding: padding,
           children: <Widget>[
             Container(
               child: Column(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 50,
                   ),
                   buildMenuItem(
@@ -59,7 +59,7 @@ class _DrawerTabState extends State<DrawerTab> {
                       text: 'Updates',
                       icon: Icons.update,
                       onClicked: () => selectedItem(context, 3)),
-                  SizedBox(
+                  const SizedBox(
                     height: 16,
                   ),
                   buildMenuItem(

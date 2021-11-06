@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:riderapp/widgets/drawer_tab_navigator.dart';
 
 class NotificationScreens extends StatefulWidget {
   const NotificationScreens({Key? key}) : super(key: key);
@@ -13,14 +14,15 @@ class _NotificationScreensState extends State<NotificationScreens> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.black,
+        centerTitle: true,
         title: Text(
-          'Notifications',
+          'NOTIFICATIONS',
           style: GoogleFonts.staatliches(
               color: Colors.white, letterSpacing: 5, fontSize: 20),
         ),
-        backgroundColor: Colors.black,
-        centerTitle: true,
       ),
+      drawer: const DrawerTab(),
       body: Column(
         children: <Widget>[
           Container(
@@ -60,7 +62,7 @@ class _NotificationScreensState extends State<NotificationScreens> {
   }
 }
 
-Widget _column1() => Column(
+_column1() => Column(
       children: <Widget>[
         Padding(
           padding: const EdgeInsets.only(top: 12, left: 10),
