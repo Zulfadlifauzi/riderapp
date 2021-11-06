@@ -3,6 +3,7 @@ import 'package:form_field_validator/form_field_validator.dart';
 import 'package:lottie/lottie.dart';
 import 'package:riderapp/auth/signup.dart';
 import 'package:riderapp/auth/forgot_password.dart';
+import 'package:riderapp/models/login.dart';
 import 'package:riderapp/widgets/bottom_tab_navigator.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -16,8 +17,24 @@ class _SignupScreenState extends State<LoginScreen> {
   TextEditingController passController = TextEditingController();
   TextEditingController emailController = TextEditingController();
 
-  GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<FormState>();
+
+  late LoginRequestModel requestModel;
+
+  bool validateAndSave() {
+    final form = _formKey.currentState;
+    if (form!.validate()) {
+      form.save();
+      return true;
+    }
+    return false;
+  }
+
+  @override
+  void initState() {
+    requestModel = LoginRequestModel();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +50,7 @@ class _SignupScreenState extends State<LoginScreen> {
       backgroundColor: const Color(0xFFffffff),
       body: SingleChildScrollView(
         child: Form(
-          key: formKey,
+          key: _formKey,
           child: Container(
             padding: const EdgeInsets.only(left: 40, right: 40),
             child: Column(
@@ -66,6 +83,7 @@ class _SignupScreenState extends State<LoginScreen> {
                   child: Lottie.asset('assets/lottie/rider.json'),
                 ),
                 TextFormField(
+                    onSaved: (input) => requestModel.email = input,
                     controller: emailController,
                     decoration:
                         const InputDecoration(labelText: 'Enter your email'),
@@ -75,6 +93,7 @@ class _SignupScreenState extends State<LoginScreen> {
                     ])),
                 SizedBox(height: height * 0.05),
                 TextFormField(
+                  onSaved: (input) => requestModel.password = input,
                   controller: passController,
                   decoration:
                       const InputDecoration(labelText: 'Enter your password'),
@@ -131,6 +150,10 @@ class _SignupScreenState extends State<LoginScreen> {
                         ),
                         child: TextButton(
                           onPressed: () {
+                            if (_formKey.currentState!.validate()) {}
+                            if (validateAndSave()) {
+                              print(requestModel.toJson());
+                            }
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
@@ -176,15 +199,4 @@ class _SignupScreenState extends State<LoginScreen> {
       ),
     );
   }
-
-  bool validateAndSave() {
-    final form = formKey.currentState;
-    if (form!.validate()) {
-      form.save();
-      return true;
-    }
-    return false;
-  }
-
-//ignore: must_be_immutable
 }

@@ -22,63 +22,67 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
         centerTitle: true,
         backgroundColor: Colors.black,
       ),
-      body: SizedBox(
-        width: double.infinity,
-        child: Column(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(left: 20, top: 20),
-              child: Container(
-                child: Lottie.asset('assets/lottie/reset.json',
-                    width: 200, height: 200),
+      body: SingleChildScrollView(
+        child: SizedBox(
+          width: double.infinity,
+          child: Column(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(left: 20, top: 20),
+                child: Container(
+                  child: Lottie.asset('assets/lottie/reset.json',
+                      width: 200, height: 200),
+                ),
               ),
-            ),
-            Column(
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(top: 20),
-                  child: Text('Enter your email to reset your password',
-                      style: GoogleFonts.staatliches(
-                          letterSpacing: 1, fontSize: 20)),
-                )
-              ],
-            ),
-            Column(
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(left: 30, top: 20, right: 30),
-                  child: TextFormField(
-                    decoration:
-                        const InputDecoration(labelText: 'Enter your email'),
-                    validator: MultiValidator([
-                      RequiredValidator(errorText: 'Enter your email'),
-                      EmailValidator(errorText: 'Invalid email')
-                    ]),
-                  ),
-                )
-              ],
-            ),
-            Column(
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(left: 30, right: 30, top: 20),
-                  child: Container(
-                    width: double.infinity,
-                    decoration: const BoxDecoration(
-                      color: Colors.black,
+              Column(
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20),
+                    child: Text('Enter your email to reset your password',
+                        style: GoogleFonts.staatliches(
+                            letterSpacing: 1, fontSize: 20)),
+                  )
+                ],
+              ),
+              Column(
+                children: <Widget>[
+                  Padding(
+                    padding:
+                        const EdgeInsets.only(left: 30, top: 20, right: 30),
+                    child: TextFormField(
+                      decoration:
+                          const InputDecoration(labelText: 'Enter your email'),
+                      validator: MultiValidator([
+                        RequiredValidator(errorText: 'Enter your email'),
+                        EmailValidator(errorText: 'Invalid email')
+                      ]),
                     ),
-                    child: TextButton(
-                      onPressed: () {},
-                      child: const Text(
-                        'Reset Password',
-                        style: TextStyle(color: Colors.white),
+                  )
+                ],
+              ),
+              Column(
+                children: <Widget>[
+                  Padding(
+                    padding:
+                        const EdgeInsets.only(left: 30, right: 30, top: 20),
+                    child: Container(
+                      width: double.infinity,
+                      decoration: const BoxDecoration(
+                        color: Colors.black,
+                      ),
+                      child: TextButton(
+                        onPressed: () {},
+                        child: const Text(
+                          'Reset Password',
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ),
                     ),
-                  ),
-                )
-              ],
-            )
-          ],
+                  )
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );
