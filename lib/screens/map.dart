@@ -227,7 +227,7 @@ Widget buildSheet() => Column(
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.only(left: 20, top: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
           child: Row(
             children: const [
               Icon(Ionicons.person_outline),
@@ -247,7 +247,7 @@ Widget buildSheet() => Column(
         ),
         const Divider(thickness: 1),
         Padding(
-          padding: const EdgeInsets.only(left: 20, top: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
           child: Row(
             children: const [
               Icon(Ionicons.chatbox_outline),
@@ -267,7 +267,7 @@ Widget buildSheet() => Column(
         ),
         const Divider(thickness: 1),
         Padding(
-          padding: const EdgeInsets.only(left: 20, top: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
           child: Row(
             children: const [
               Icon(Ionicons.card_outline),
@@ -287,7 +287,7 @@ Widget buildSheet() => Column(
         ),
         const Divider(thickness: 1),
         Padding(
-          padding: const EdgeInsets.only(left: 20, top: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
           child: Row(
             children: const [
               Icon(Ionicons.location_outline),
@@ -332,6 +332,6 @@ Widget buildSheet() => Column(
             ),
           ],
         ),
-        const Divider(thickness: 1)
+        const SizedBox(height: 10)
       ],
     );

@@ -13,71 +13,69 @@ class _NotificationScreensState extends State<NotificationScreens> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        centerTitle: true,
-        title: Text(
-          'NOTIFICATIONS',
-          style: GoogleFonts.staatliches(
-              color: Colors.white, letterSpacing: 5, fontSize: 20),
+        appBar: AppBar(
+          backgroundColor: Colors.black,
+          centerTitle: true,
+          title: Text(
+            'NOTIFICATIONS',
+            style: GoogleFonts.staatliches(
+                color: Colors.white, letterSpacing: 5, fontSize: 20),
+          ),
         ),
-      ),
-      drawer: const DrawerTab(),
-      body: Column(
-        children: <Widget>[
-          Container(
-              margin: const EdgeInsets.only(top: 10),
-              decoration: const BoxDecoration(color: Colors.white70),
-              width: double.infinity,
-              height: 45,
-              child: _column1()),
-          const Divider(thickness: 1),
-          Container(
-              decoration: const BoxDecoration(color: Colors.white70),
-              width: double.infinity,
-              height: 45,
-              child: _column1()),
-          const Divider(thickness: 1),
-          Container(
-              decoration: const BoxDecoration(color: Colors.white70),
-              width: double.infinity,
-              height: 45,
-              child: _column1()),
-          const Divider(thickness: 1),
-          Container(
-              decoration: const BoxDecoration(color: Colors.white70),
-              width: double.infinity,
-              height: 45,
-              child: _column1()),
-          const Divider(thickness: 1),
-          Container(
-              decoration: const BoxDecoration(color: Colors.white70),
-              width: double.infinity,
-              height: 45,
-              child: _column1()),
-          const Divider(thickness: 1)
-        ],
-      ),
-    );
+        drawer: const DrawerTab(),
+        body: _columnNotification());
   }
 }
 
-_column1() => Column(
-      children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.only(top: 12, left: 10),
-          child: Row(
-            children: <Widget>[
-              Column(
-                children: const [
-                  Text(
-                    'Lorem ipsum dolor sit amet, \nconsectetur adipiscing elit',
-                    style: TextStyle(color: Colors.black),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        )
-      ],
-    );
+_columnNotification() {
+  _column1() => Column(
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(top: 12, left: 10),
+            child: Row(
+              children: <Widget>[
+                Column(
+                  children: const [
+                    Text(
+                      'Lorem ipsum dolor sit amet, \nconsectetur adipiscing elit',
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          )
+        ],
+      );
+  Container(
+      margin: const EdgeInsets.only(top: 10),
+      decoration: const BoxDecoration(color: Colors.white70),
+      width: double.infinity,
+      height: 45,
+      child: _column1());
+  const Divider(thickness: 1);
+  Container(
+      decoration: const BoxDecoration(color: Colors.white70),
+      width: double.infinity,
+      height: 45,
+      child: _column1());
+  const Divider(thickness: 1);
+  Container(
+      decoration: const BoxDecoration(color: Colors.white70),
+      width: double.infinity,
+      height: 45,
+      child: _column1());
+  const Divider(thickness: 1);
+  Container(
+      decoration: const BoxDecoration(color: Colors.white70),
+      width: double.infinity,
+      height: 45,
+      child: _column1());
+  const Divider(thickness: 1);
+  Container(
+      decoration: const BoxDecoration(color: Colors.white70),
+      width: double.infinity,
+      height: 45,
+      child: _column1());
+  const Divider(thickness: 1);
+}
