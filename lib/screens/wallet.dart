@@ -62,7 +62,9 @@ class _WalletScreenState extends State<WalletScreen> {
               ),
             ),
           ),
-          const Divider(thickness: 1),
+          const SizedBox(
+            height: 10,
+          ),
           Row(
             // ignore: prefer_const_literals_to_create_immutables
             children: [

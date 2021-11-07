@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:riderapp/constant/constant.dart';
 import 'package:riderapp/models/order.dart';
 
 class MapScreen extends StatefulWidget {
@@ -332,6 +333,28 @@ Widget buildSheet() => Column(
             ),
           ],
         ),
-        const SizedBox(height: 10)
+        const Divider(thickness: 1),
+        Container(
+          padding: const EdgeInsets.only(right: 10),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              ElevatedButton(
+                  style: ElevatedButton.styleFrom(primary: kButtonColor),
+                  onPressed: () {},
+                  child: Container(
+                    child: const Text('Cancel'),
+                  )),
+              const SizedBox(
+                width: 10,
+              ),
+              ElevatedButton(
+                  onPressed: () {},
+                  child: Container(
+                    child: const Text('Accept'),
+                  )),
+            ],
+          ),
+        )
       ],
     );

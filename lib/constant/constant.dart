@@ -8,7 +8,7 @@ const kWarninngColor = Color(0xFFF3BB1C);
 const kErrorColor = Color(0xFFF03738);
 const kTextColor = Color(0xFF58804D);
 const kBackgroundColor = Color(0xFFFFFBF5);
-
+const kButtonColor = Color(0xFFdc143c);
 const kDefaultPadding = 20.0;
 const defaultPadding = 20.0;
 const cartBarHeight = 100.0;
