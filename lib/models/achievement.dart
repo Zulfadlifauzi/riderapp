@@ -14,27 +14,31 @@ var levelupData = [
   {
     'name': 'Beginner',
     'status': 'Completed',
-    'image': 'https://static.toiimg.com/photo/54445819.cms'
+    'image':
+        'https://i.pinimg.com/originals/c7/80/5e/c7805ee9aa1a16baaa33a7b1be2f220e.png'
   },
   {
     'name': 'Send 1 Order',
     'status': 'Completed',
-    'image': 'https://live.staticflickr.com/6010/5983602334_3f1e716fbc_b.jpg'
+    'image':
+        'https://i.pinimg.com/originals/c7/80/5e/c7805ee9aa1a16baaa33a7b1be2f220e.png'
   },
   {
     'name': 'Send 5 Order',
     'status': 'Completed',
-    'image': 'https://cache.etips.com/poi/poi181/o/306.jpg'
+    'image':
+        'https://i.pinimg.com/originals/c7/80/5e/c7805ee9aa1a16baaa33a7b1be2f220e.png'
   },
   {
     'name': 'Send 10 Order',
     'status': 'Completed',
     'image':
-        'https://www.e-maik.my/v2/images/masjid/Masjid-Muhammadi/DSC_3805.jpg'
+        'https://i.pinimg.com/originals/c7/80/5e/c7805ee9aa1a16baaa33a7b1be2f220e.png'
   },
   {
     'name': 'Completed the tutorial',
     'status': 'Completed',
-    'image': 'https://live.staticflickr.com/5778/23359946396_3c6fc9034c_b.jpg'
+    'image':
+        'https://i.pinimg.com/originals/c7/80/5e/c7805ee9aa1a16baaa33a7b1be2f220e.png'
   },
 ];

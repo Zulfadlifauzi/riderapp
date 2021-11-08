@@ -24,99 +24,84 @@ class _ProfileScreenState extends State<ProfileScreen> {
         backgroundColor: Colors.black,
       ),
       body: SingleChildScrollView(
-        child: Center(
-          child: Stack(
-            children: <Widget>[
-              Column(
-                children: [
-                  Padding(
-                    padding:
-                        const EdgeInsets.only(left: 130, bottom: 500, top: 20),
-                    child: CircularProfileAvatar(
-                      '',
-                      child: const Icon(
-                        Icons.person,
-                        size: 140,
-                      ),
-                      borderColor: Colors.black,
-                      borderWidth: 3,
-                      elevation: 5,
-                      radius: 75,
-                    ),
-                  ),
-                ],
+        child: Container(
+          width: double.infinity,
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 20,
               ),
-              const Padding(
-                padding: EdgeInsets.only(top: 180),
-                child: Divider(thickness: 1),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 20, right: 20, top: 185),
+              Container(
+                padding: const EdgeInsets.only(left: 20, right: 20),
                 child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    const Text(
-                      'Achievement',
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                    ),
+                  children: [
+                    const Text('Achievement'),
                     Expanded(child: Container()),
-                    TextButton(
-                        onPressed: () {},
-                        child: const Text(
-                          'See All',
-                          style: TextStyle(color: Colors.grey),
-                        ))
+                    const Text('See All'),
                   ],
                 ),
               ),
-              Container(
-                margin: const EdgeInsets.only(top: 230),
-                height: 150,
-                width: double.infinity,
-                child: ListView.builder(
-                  itemCount: levelup.length,
-                  scrollDirection: Axis.horizontal,
-                  physics: const BouncingScrollPhysics(),
-                  padding: const EdgeInsets.only(left: 20, right: 10),
-                  itemBuilder: (context, index) {
-                    return Container(
-                      margin: const EdgeInsets.only(right: 20),
-                      height: 45,
-                      width: 150,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          color: Colors.white),
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 100),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            Column(
-                              children: [
-                                Image.network(
-                                  levelup[index].image!,
+              const SizedBox(
+                height: 10,
+              ),
+              Row(
+                children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 190,
+                    child: ListView.builder(
+                        itemCount: levelup.length,
+                        scrollDirection: Axis.horizontal,
+                        physics: const BouncingScrollPhysics(),
+                        itemBuilder: (context, index) {
+                          return Container(
+                              width: 200,
+                              margin:
+                                  const EdgeInsets.only(right: 20, left: 20),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(5),
+                                color: Colors.white,
+                              ),
+                              child: Container(
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Column(
+                                      children: [
+                                        Container(
+                                            width: 200,
+                                            height: 130,
+                                            child: Image.network(
+                                              levelup[index].image!,
+                                              fit: BoxFit.cover,
+                                            )),
+                                        const SizedBox(
+                                          height: 10,
+                                        ),
+                                        Container(
+                                            child: Column(
+                                          children: [
+                                            Text(
+                                              levelup[index].name!,
+                                            ),
+                                            const SizedBox(height: 5),
+                                            Text(
+                                              levelup[index].status!,
+                                              style: const TextStyle(
+                                                  color: Colors.greenAccent,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                          ],
+                                        )),
+                                      ],
+                                    )
+                                  ],
                                 ),
-                                Text(
-                                  levelup[index].name!,
-                                ),
-                                const SizedBox(height: 5),
-                                Text(
-                                  levelup[index].status!,
-                                  style: const TextStyle(
-                                      color: Colors.greenAccent,
-                                      fontWeight: FontWeight.bold),
-                                )
-                              ],
-                            )
-                          ],
-                        ),
-                      ),
-                    );
-                  },
-                ),
-              )
+                              ));
+                        }),
+                  )
+                ],
+              ),
             ],
           ),
         ),
@@ -124,3 +109,52 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 }
+
+
+            // Container(
+            //   margin: const EdgeInsets.only(top: 230),
+            //   height: 150,
+            //   width: double.infinity,
+            //   child: ListView.builder(
+            //     itemCount: levelup.length,
+            //     scrollDirection: Axis.horizontal,
+            //     physics: const BouncingScrollPhysics(),
+            //     padding: const EdgeInsets.only(left: 20, right: 10),
+            //     itemBuilder: (context, index) {
+            //       return Container(
+            //         margin: const EdgeInsets.only(right: 20),
+            //         height: 45,
+            //         width: 150,
+            //         decoration: BoxDecoration(
+            //             borderRadius: BorderRadius.circular(5),
+            //             color: Colors.white),
+            //         child: Container(
+            //           child: Row(
+            //             mainAxisAlignment: MainAxisAlignment.center,
+            //             crossAxisAlignment: CrossAxisAlignment.center,
+            //             children: <Widget>[
+            //               Column(
+            //                 children: [
+            //                   Image.network(
+            //                     levelup[index].image!,
+            //                     fit: BoxFit.fill,
+            //                   ),
+            //                   Text(
+            //                     levelup[index].name!,
+            //                   ),
+            //                   const SizedBox(height: 5),
+            //                   Text(
+            //                     levelup[index].status!,
+            //                     style: const TextStyle(
+            //                         color: Colors.greenAccent,
+            //                         fontWeight: FontWeight.bold),
+            //                   )
+            //                 ],
+            //               )
+            //             ],
+            //           ),
+            //         ),
+            //       );
+            //     },
+            //   ),
+            // )
